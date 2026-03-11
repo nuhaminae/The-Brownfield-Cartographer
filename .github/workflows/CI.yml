@@ -32,7 +32,11 @@ jobs:
           key: ${{ runner.os }}-venv-${{ hashFiles('pyproject.toml') }}
           restore-keys: ${{ runner.os }}-venv-
 
-      - name: Create and install dependencies if cache miss
+      - name: Create virtualenv if cache miss
+        if: steps.venv-cache.outputs.cache-hit != 'true'
+        run: uv venv
+
+      - name: Install dependencies if cache miss
         if: steps.venv-cache.outputs.cache-hit != 'true'
         run: uv pip install .[dev]
 
