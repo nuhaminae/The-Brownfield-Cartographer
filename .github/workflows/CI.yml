@@ -34,7 +34,7 @@ jobs:
 
       - name: Create virtualenv if cache miss
         if: steps.venv-cache.outputs.cache-hit != 'true'
-        run: uv venv
+        run: uv venv --clear
 
       - name: Install dependencies if cache miss
         if: steps.venv-cache.outputs.cache-hit != 'true'
