@@ -1,0 +1,447 @@
+{
+  "nodes": [
+    {
+      "id": "tap-gitlab",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "target-jsonl",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "example",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "tap-github",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-smoke-test",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "target-csv",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "tap-cloudwatch",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-meltanohub",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-spreadsheets-anywhere",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-slack",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-slack-public",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-google-analytics",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-github-meltano",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-github-search",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-snowflake",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-snowflake-metrics",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-snowflake-audit",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-snowflake-singer-activity",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "target-yaml",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "target-yaml-metrics",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "target-yaml-audit",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "target-snowflake",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "target-apprise",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "meltano-map-transformer",
+      "attrs": {
+        "type": "mapper"
+      }
+    },
+    {
+      "id": "airflow",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "dbt-snowflake",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "sqlfluff",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "awscli",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "superset",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "great_expectations",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "permifrost",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "kms",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "target-sqlite",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "target-postgres",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "dbt-postgres",
+      "attrs": {
+        "type": "utilitie"
+      }
+    },
+    {
+      "id": "tap-with-state",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "tap-with-large-config",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "target-with-large-config",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "tap-meltano-yml",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "target-meltano-yml",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "map-meltano-yml",
+      "attrs": {
+        "type": "mapper"
+      }
+    },
+    {
+      "id": "tap-subconfig-2-yml",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "target-subconfig-2-yml",
+      "attrs": {
+        "type": "loader"
+      }
+    },
+    {
+      "id": "tap-subconfig-1-yml",
+      "attrs": {
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "target-subconfig-1-yml",
+      "attrs": {
+        "type": "loader"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "tap-gitlab",
+      "target": "target-jsonl",
+      "type": "dag"
+    },
+    {
+      "source": "tap-gitlab",
+      "target": "target-sqlite",
+      "type": "dag"
+    },
+    {
+      "source": "tap-gitlab",
+      "target": "target-postgres",
+      "type": "dag"
+    },
+    {
+      "source": "tap-smoke-test",
+      "target": "target-csv",
+      "type": "dag"
+    },
+    {
+      "source": "tap-with-state",
+      "target": "target-jsonl",
+      "type": "dag"
+    },
+    {
+      "source": "tap-meltano-yml",
+      "target": "target-meltano-yml",
+      "type": "dag"
+    },
+    {
+      "source": "tap-subconfig-2-yml",
+      "target": "target-subconfig-2-yml",
+      "type": "dag"
+    },
+    {
+      "source": "tap-subconfig-1-yml",
+      "target": "target-subconfig-1-yml",
+      "type": "dag"
+    }
+  ],
+  "pagerank": {},
+  "circular_dependencies": [],
+  "velocity": {},
+  "sources": [
+    "tap-gitlab",
+    "example",
+    "tap-github",
+    "tap-smoke-test",
+    "tap-cloudwatch",
+    "tap-meltanohub",
+    "tap-spreadsheets-anywhere",
+    "tap-slack",
+    "tap-slack-public",
+    "tap-google-analytics",
+    "tap-github-meltano",
+    "tap-github-search",
+    "tap-snowflake",
+    "tap-snowflake-metrics",
+    "tap-snowflake-audit",
+    "tap-snowflake-singer-activity",
+    "target-yaml",
+    "target-yaml-metrics",
+    "target-yaml-audit",
+    "target-snowflake",
+    "target-apprise",
+    "meltano-map-transformer",
+    "airflow",
+    "dbt-snowflake",
+    "sqlfluff",
+    "awscli",
+    "superset",
+    "great_expectations",
+    "permifrost",
+    "kms",
+    "dbt-postgres",
+    "tap-with-state",
+    "tap-with-large-config",
+    "target-with-large-config",
+    "tap-meltano-yml",
+    "map-meltano-yml",
+    "tap-subconfig-2-yml",
+    "tap-subconfig-1-yml"
+  ],
+  "sinks": [
+    "target-jsonl",
+    "example",
+    "tap-github",
+    "target-csv",
+    "tap-cloudwatch",
+    "tap-meltanohub",
+    "tap-spreadsheets-anywhere",
+    "tap-slack",
+    "tap-slack-public",
+    "tap-google-analytics",
+    "tap-github-meltano",
+    "tap-github-search",
+    "tap-snowflake",
+    "tap-snowflake-metrics",
+    "tap-snowflake-audit",
+    "tap-snowflake-singer-activity",
+    "target-yaml",
+    "target-yaml-metrics",
+    "target-yaml-audit",
+    "target-snowflake",
+    "target-apprise",
+    "meltano-map-transformer",
+    "airflow",
+    "dbt-snowflake",
+    "sqlfluff",
+    "awscli",
+    "superset",
+    "great_expectations",
+    "permifrost",
+    "kms",
+    "target-sqlite",
+    "target-postgres",
+    "dbt-postgres",
+    "tap-with-large-config",
+    "target-with-large-config",
+    "target-meltano-yml",
+    "map-meltano-yml",
+    "target-subconfig-2-yml",
+    "target-subconfig-1-yml"
+  ],
+  "blast_radius": {
+    "tap-gitlab": 3,
+    "target-jsonl": 0,
+    "example": 0,
+    "tap-github": 0,
+    "tap-smoke-test": 1,
+    "target-csv": 0,
+    "tap-cloudwatch": 0,
+    "tap-meltanohub": 0,
+    "tap-spreadsheets-anywhere": 0,
+    "tap-slack": 0,
+    "tap-slack-public": 0,
+    "tap-google-analytics": 0,
+    "tap-github-meltano": 0,
+    "tap-github-search": 0,
+    "tap-snowflake": 0,
+    "tap-snowflake-metrics": 0,
+    "tap-snowflake-audit": 0,
+    "tap-snowflake-singer-activity": 0,
+    "target-yaml": 0,
+    "target-yaml-metrics": 0,
+    "target-yaml-audit": 0,
+    "target-snowflake": 0,
+    "target-apprise": 0,
+    "meltano-map-transformer": 0,
+    "airflow": 0,
+    "dbt-snowflake": 0,
+    "sqlfluff": 0,
+    "awscli": 0,
+    "superset": 0,
+    "great_expectations": 0,
+    "permifrost": 0,
+    "kms": 0,
+    "target-sqlite": 0,
+    "target-postgres": 0,
+    "dbt-postgres": 0,
+    "tap-with-state": 1,
+    "tap-with-large-config": 0,
+    "target-with-large-config": 0,
+    "tap-meltano-yml": 1,
+    "target-meltano-yml": 0,
+    "map-meltano-yml": 0,
+    "tap-subconfig-2-yml": 1,
+    "target-subconfig-2-yml": 0,
+    "tap-subconfig-1-yml": 1,
+    "target-subconfig-1-yml": 0
+  }
+}
