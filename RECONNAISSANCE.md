@@ -12,7 +12,7 @@ The primary ingestion path shows how data first enters the system, how it flows 
 
 In the case of Melanto, there are different ingestion paths, but the setup remains the same regadless.The ingestion path is always defined by the extractor-loader chain inside each meltano.yml.
 
-**Tap (extractor) → optional intermediate blocks → Target (loader)**
+#### **Tap (extractor) → optional intermediate blocks → Target (loader)**
 
 Examples of how Meltano handles different contexts (local vs S3 state, envvar configs, manifests, migrations), while keeping the ingestion path consistent.
 
@@ -96,12 +96,12 @@ Here is how far downstream a damage can spread if one of the core components bre
 
 - **Core Orchestration Layer (`/src/meltano/core/`)**
   - This is where the orchestration of ELT pipelines lives.
-  - Logic for running jobs, managing state, handling errors, and sequencing extract → load → transform is centralized.
+  - Logic for running jobs, managing state, handling errors, and sequencing extract → load → transform is centralised.
   - The CLI (`meltano run`, `meltano elt`) is tightly coupled to this layer, so the “brains” of the system are concentrated here.
 
 - **Configuration (`meltano.yml`)**
   - Business rules about *which* extractors, loaders, and transformers to use are concentrated in a single config file.
-  - This makes pipeline definitions declarative and centralized.
+  - This makes pipeline definitions declarative and centralised.
 
 #### Distributed Business Logic
 
