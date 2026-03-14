@@ -2,6 +2,7 @@
 # The Brownfield Cartographer CLI entry point
 
 import argparse
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -16,63 +17,50 @@ def clone_repo(github_url: str, target_dir: Path) -> Path:
         subprocess.run(["git", "clone", github_url, str(target_dir)], check=True)
         return target_dir
     except subprocess.CalledProcessError as e:
-        print(f"Error cloning repo: {e}")
+        print(f"[CLI] Error cloning repo: {e}")
         sys.exit(1)
 
 
 def main():
     """
-    Main entry point for the Brownfield Cartographer CLI
-
-    This function takes command-line arguments for a repository path (local or GitHub URL),
-    git velocity window (default: 30 days), and output directory (default: .cartography).
-
-    It clones the repository if necessary, runs the analysis pipeline, and writes the
-    resulting artifacts to the specified output directory.
-
-    :param args: Command-line arguments parsed by argparse
-    :return: None
+    CLI entry point.
+    Supports:
+    - Local repo path or GitHub URL
+    - Git velocity window (default: 30 days)
+    - Output directory (default: .cartography)
+    - Optional flags to run only Surveyor or Hydrologist
     """
     parser = argparse.ArgumentParser(description="Brownfield Cartographer CLI")
     parser.add_argument(
         "--repo", required=True, help="Path to local repo or GitHub URL"
     )
+    parser.add_argument("--days", type=int, default=30, help="Git velocity window")
     parser.add_argument(
-        "--days", type=int, default=30, help="Git velocity window (default: 30 days)"
+        "--output", default=".cartography", help="Directory for artifacts"
     )
     parser.add_argument(
-        "--output", default=".cartography", help="Directory to store analysis artifacts"
+        "--phase", choices=["all", "surveyor", "hydrologist"], default="all"
     )
-
     args = parser.parse_args()
 
     repo_path = Path(args.repo)
-    if args.repo.startswith("http://") or args.repo.startswith("https://"):
-        # Clone GitHub repo into temp dir
+    temp_dir = None
+    if args.repo.startswith(("http://", "https://")):
         temp_dir = Path(tempfile.mkdtemp())
         repo_path = clone_repo(args.repo, temp_dir)
-
     if not repo_path.exists():
-        print(f"Repository path {repo_path} does not exist.")
+        print(f"[CLI] Repository path {repo_path} does not exist.")
         sys.exit(1)
 
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"Running analysis on {repo_path}...")
-    run_analysis(repo_path, output_dir, days=args.days)
-    print(f"Analysis complete. Artifacts written to {output_dir}")
+    print(f"[CLI] Running analysis on {repo_path} (phase={args.phase})...")
+    run_analysis(repo_path, output_dir, days=args.days, phase=args.phase)
+    print(f"[CLI] Analysis complete. Artifacts written to {output_dir}")
 
-    print("\n[CLI] Analysis Summary:")
-    for file_name in [
-        "module_graph.json",
-        "lineage_graph.json",
-        "knowledge_graph.json",
-    ]:
-        file_path = output_dir / file_name
-        if file_path.exists():
-            size_kb = file_path.stat().st_size / 1024
-            print(f" - {file_name}: {size_kb:.1f} KB at {file_path}")
+    if temp_dir:
+        shutil.rmtree(temp_dir, ignore_errors=True)
 
 
 if __name__ == "__main__":
