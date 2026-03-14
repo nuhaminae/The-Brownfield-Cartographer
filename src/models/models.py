@@ -2,7 +2,7 @@
 # The Brownfield Cartographer Models
 
 from enum import Enum
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel
 
@@ -12,6 +12,10 @@ class EdgeType(str, Enum):
     IMPORT = "import"
     SQL = "sql"
     DAG = "dag"
+    DATAFLOW = "dataflow"
+    SOURCE = "source"
+    SINK = "sink"
+    CONFIG = "config"
 
 
 class Edge(BaseModel):
@@ -37,26 +41,28 @@ class ClassNode(BaseModel):
 # --- ModuleNode Model ---
 class ModuleNode(BaseModel):
     path: str
-    imports: List[str]
-    functions: List[str]
-    classes: List[ClassNode]
+    imports: List[str] = []
+    functions: List[str] = []
+    classes: List[ClassNode] = []
+    pairs: List[Dict[str, Optional[str]]] = []
+    tables: List[str] = []
+    queries: List[str] = []
 
     def to_dict(self) -> Dict[str, Any]:
         """Serialise the ModuleNode object into a dictionary for JSON export."""
         return self.model_dump()
 
 
-# --- GraphSchema Model ---
-class GraphSchema(BaseModel):
+# --- DataLineageGraph Model ---
+class DataLineageGraph(BaseModel):
     nodes: List[Dict[str, Any]]
     edges: List[Dict[str, Any]]
     pagerank: Dict[str, float] = {}
-    circular_dependencies: List[List[str]] = []
     velocity: Dict[str, Any] = {}
     sources: List[str] = []
     sinks: List[str] = []
     blast_radius: Dict[str, int] = {}
 
     def to_dict(self) -> Dict[str, Any]:
-        """Serialise the GraphSchema object into a dictionary for JSON export."""
+        """Serialise the DataLineageGraph object into a dictionary for JSON export."""
         return self.model_dump()
