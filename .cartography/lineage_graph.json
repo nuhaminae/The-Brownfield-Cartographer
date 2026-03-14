@@ -3,363 +3,470 @@
     {
       "id": "tap-gitlab",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "target-jsonl",
       "attrs": {
+        "file": "meltano\\integration\\example-library\\meltano-state-s3\\meltano.yml",
         "type": "loader"
       }
     },
     {
       "id": "example",
       "attrs": {
+        "file": "meltano\\integration\\example-library\\meltano-env-precedence\\meltano.yml",
         "type": "utilitie"
       }
     },
     {
       "id": "tap-github",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-smoke-test",
       "attrs": {
+        "file": "meltano\\integration\\example-library\\meltano-expand-envvars-in-array\\meltano.yml",
         "type": "extractor"
       }
     },
     {
       "id": "target-csv",
       "attrs": {
+        "file": "meltano\\integration\\example-library\\meltano-expand-envvars-in-array\\meltano.yml",
         "type": "loader"
       }
     },
     {
       "id": "tap-cloudwatch",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-meltanohub",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-spreadsheets-anywhere",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-slack",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-slack-public",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-google-analytics",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-github-meltano",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-github-search",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-snowflake",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-snowflake-metrics",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-snowflake-audit",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "tap-snowflake-singer-activity",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "extractor"
       }
     },
     {
       "id": "target-yaml",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "loader"
       }
     },
     {
       "id": "target-yaml-metrics",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "loader"
       }
     },
     {
       "id": "target-yaml-audit",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "loader"
       }
     },
     {
       "id": "target-snowflake",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "loader"
       }
     },
     {
       "id": "target-apprise",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "loader"
       }
     },
     {
       "id": "meltano-map-transformer",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "mapper"
       }
     },
     {
       "id": "airflow",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "utilitie"
       }
     },
     {
       "id": "dbt-snowflake",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "utilitie"
       }
     },
     {
       "id": "sqlfluff",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "utilitie"
       }
     },
     {
       "id": "awscli",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "utilitie"
       }
     },
     {
       "id": "superset",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "utilitie"
       }
     },
     {
       "id": "great_expectations",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "utilitie"
       }
     },
     {
       "id": "permifrost",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "utilitie"
       }
     },
     {
       "id": "kms",
       "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
         "type": "utilitie"
       }
     },
     {
       "id": "target-sqlite",
       "attrs": {
+        "file": "meltano\\integration\\example-library\\meltano-migrations\\meltano.yml",
         "type": "loader"
       }
     },
     {
       "id": "target-postgres",
       "attrs": {
+        "file": "meltano\\integration\\example-library\\meltano-run\\meltano.yml",
         "type": "loader"
       }
     },
     {
       "id": "dbt-postgres",
       "attrs": {
+        "file": "meltano\\integration\\example-library\\meltano-run\\ending-meltano.yml",
         "type": "utilitie"
       }
     },
     {
       "id": "tap-with-state",
       "attrs": {
+        "file": "meltano\\integration\\example-library\\meltano-run-merge-states\\meltano.yml",
         "type": "extractor"
       }
     },
     {
       "id": "tap-with-large-config",
       "attrs": {
+        "file": "meltano\\tests\\fixtures\\large_config_project\\meltano.yml",
         "type": "extractor"
       }
     },
     {
       "id": "target-with-large-config",
       "attrs": {
+        "file": "meltano\\tests\\fixtures\\large_config_project\\schedule.yml",
         "type": "loader"
       }
     },
     {
       "id": "tap-meltano-yml",
       "attrs": {
+        "file": "meltano\\tests\\fixtures\\multifile_project\\meltano.yml",
         "type": "extractor"
-      }
-    },
-    {
-      "id": "target-meltano-yml",
-      "attrs": {
-        "type": "loader"
       }
     },
     {
       "id": "map-meltano-yml",
       "attrs": {
+        "file": "meltano\\tests\\fixtures\\multifile_project\\meltano.yml",
         "type": "mapper"
+      }
+    },
+    {
+      "id": "target-meltano-yml",
+      "attrs": {
+        "file": "meltano\\tests\\fixtures\\multifile_project\\meltano.yml",
+        "type": "loader"
       }
     },
     {
       "id": "tap-subconfig-2-yml",
       "attrs": {
+        "file": "meltano\\tests\\fixtures\\multifile_project\\subconfig_2.yml",
         "type": "extractor"
       }
     },
     {
       "id": "target-subconfig-2-yml",
       "attrs": {
+        "file": "meltano\\tests\\fixtures\\multifile_project\\subconfig_2.yml",
         "type": "loader"
       }
     },
     {
       "id": "tap-subconfig-1-yml",
       "attrs": {
+        "file": "meltano\\tests\\fixtures\\multifile_project\\subfolder\\subconfig_1.yml",
         "type": "extractor"
       }
     },
     {
       "id": "target-subconfig-1-yml",
       "attrs": {
+        "file": "meltano\\tests\\fixtures\\multifile_project\\subfolder\\subconfig_1.yml",
         "type": "loader"
       }
+    },
+    {
+      "id": "tap-snowflake-metrics-legacy",
+      "attrs": {
+        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+        "type": "extractor"
+      }
+    },
+    {
+      "id": "DataFrame",
+      "attrs": {}
+    },
+    {
+      "id": "DataFrame:join",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\src\\meltano\\core\\db.py",
+      "attrs": {}
+    },
+    {
+      "id": "SQLAlchemy:execute",
+      "attrs": {}
+    },
+    {
+      "id": "DataFrame:merge",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\src\\meltano\\core\\block\\extract_load.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\src\\meltano\\core\\state_store\\db.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\src\\meltano\\migrations\\versions\\23ea52e6d784_add_resource_type_to_embed_token.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\src\\meltano\\migrations\\versions\\6828cc5b1a4f_create_dedicated_state_table.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\src\\meltano\\migrations\\versions\\990c0665f3ce_ensure_user_login_count_default_value.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\tests\\fixtures\\db\\mssql.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\tests\\fixtures\\db\\postgresql.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\tests\\fixtures\\db\\postgresql_psycopg2.py",
+      "attrs": {}
+    },
+    {
+      "id": "meltano\\tests\\meltano\\core\\test_sqlalchemy.py",
+      "attrs": {}
     }
   ],
   "edges": [
     {
-      "source": "tap-gitlab",
-      "target": "target-jsonl",
-      "type": "dag"
+      "source": "DataFrame",
+      "target": "DataFrame:join",
+      "type": "dataflow"
     },
     {
-      "source": "tap-gitlab",
-      "target": "target-sqlite",
-      "type": "dag"
+      "source": "DataFrame",
+      "target": "DataFrame:merge",
+      "type": "dataflow"
     },
     {
-      "source": "tap-gitlab",
-      "target": "target-postgres",
-      "type": "dag"
+      "source": "meltano\\src\\meltano\\core\\db.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
     },
     {
-      "source": "tap-smoke-test",
-      "target": "target-csv",
-      "type": "dag"
+      "source": "meltano\\src\\meltano\\core\\block\\extract_load.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
     },
     {
-      "source": "tap-with-state",
-      "target": "target-jsonl",
-      "type": "dag"
+      "source": "meltano\\src\\meltano\\core\\state_store\\db.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
     },
     {
-      "source": "tap-meltano-yml",
-      "target": "target-meltano-yml",
-      "type": "dag"
+      "source": "meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
     },
     {
-      "source": "tap-subconfig-2-yml",
-      "target": "target-subconfig-2-yml",
-      "type": "dag"
+      "source": "meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
     },
     {
-      "source": "tap-subconfig-1-yml",
-      "target": "target-subconfig-1-yml",
-      "type": "dag"
+      "source": "meltano\\src\\meltano\\migrations\\versions\\23ea52e6d784_add_resource_type_to_embed_token.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
+    },
+    {
+      "source": "meltano\\src\\meltano\\migrations\\versions\\6828cc5b1a4f_create_dedicated_state_table.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
+    },
+    {
+      "source": "meltano\\src\\meltano\\migrations\\versions\\990c0665f3ce_ensure_user_login_count_default_value.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
+    },
+    {
+      "source": "meltano\\tests\\fixtures\\db\\mssql.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
+    },
+    {
+      "source": "meltano\\tests\\fixtures\\db\\postgresql.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
+    },
+    {
+      "source": "meltano\\tests\\fixtures\\db\\postgresql_psycopg2.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
+    },
+    {
+      "source": "meltano\\tests\\meltano\\core\\test_sqlalchemy.py",
+      "target": "SQLAlchemy:execute",
+      "type": "sql"
     }
   ],
   "pagerank": {},
-  "circular_dependencies": [],
   "velocity": {},
   "sources": [
     "tap-gitlab",
-    "example",
-    "tap-github",
-    "tap-smoke-test",
-    "tap-cloudwatch",
-    "tap-meltanohub",
-    "tap-spreadsheets-anywhere",
-    "tap-slack",
-    "tap-slack-public",
-    "tap-google-analytics",
-    "tap-github-meltano",
-    "tap-github-search",
-    "tap-snowflake",
-    "tap-snowflake-metrics",
-    "tap-snowflake-audit",
-    "tap-snowflake-singer-activity",
-    "target-yaml",
-    "target-yaml-metrics",
-    "target-yaml-audit",
-    "target-snowflake",
-    "target-apprise",
-    "meltano-map-transformer",
-    "airflow",
-    "dbt-snowflake",
-    "sqlfluff",
-    "awscli",
-    "superset",
-    "great_expectations",
-    "permifrost",
-    "kms",
-    "dbt-postgres",
-    "tap-with-state",
-    "tap-with-large-config",
-    "target-with-large-config",
-    "tap-meltano-yml",
-    "map-meltano-yml",
-    "tap-subconfig-2-yml",
-    "tap-subconfig-1-yml"
-  ],
-  "sinks": [
     "target-jsonl",
     "example",
     "tap-github",
+    "tap-smoke-test",
     "target-csv",
     "tap-cloudwatch",
     "tap-meltanohub",
@@ -390,58 +497,88 @@
     "target-sqlite",
     "target-postgres",
     "dbt-postgres",
+    "tap-with-state",
     "tap-with-large-config",
     "target-with-large-config",
-    "target-meltano-yml",
+    "tap-meltano-yml",
     "map-meltano-yml",
+    "target-meltano-yml",
+    "tap-subconfig-2-yml",
     "target-subconfig-2-yml",
-    "target-subconfig-1-yml"
+    "tap-subconfig-1-yml",
+    "target-subconfig-1-yml",
+    "tap-snowflake-metrics-legacy",
+    "DataFrame",
+    "meltano\\src\\meltano\\core\\db.py",
+    "meltano\\src\\meltano\\core\\block\\extract_load.py",
+    "meltano\\src\\meltano\\core\\state_store\\db.py",
+    "meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py",
+    "meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py",
+    "meltano\\src\\meltano\\migrations\\versions\\23ea52e6d784_add_resource_type_to_embed_token.py",
+    "meltano\\src\\meltano\\migrations\\versions\\6828cc5b1a4f_create_dedicated_state_table.py",
+    "meltano\\src\\meltano\\migrations\\versions\\990c0665f3ce_ensure_user_login_count_default_value.py",
+    "meltano\\tests\\fixtures\\db\\mssql.py",
+    "meltano\\tests\\fixtures\\db\\postgresql.py",
+    "meltano\\tests\\fixtures\\db\\postgresql_psycopg2.py",
+    "meltano\\tests\\meltano\\core\\test_sqlalchemy.py"
+  ],
+  "sinks": [
+    "tap-gitlab",
+    "target-jsonl",
+    "example",
+    "tap-github",
+    "tap-smoke-test",
+    "target-csv",
+    "tap-cloudwatch",
+    "tap-meltanohub",
+    "tap-spreadsheets-anywhere",
+    "tap-slack",
+    "tap-slack-public",
+    "tap-google-analytics",
+    "tap-github-meltano",
+    "tap-github-search",
+    "tap-snowflake",
+    "tap-snowflake-metrics",
+    "tap-snowflake-audit",
+    "tap-snowflake-singer-activity",
+    "target-yaml",
+    "target-yaml-metrics",
+    "target-yaml-audit",
+    "target-snowflake",
+    "target-apprise",
+    "meltano-map-transformer",
+    "airflow",
+    "dbt-snowflake",
+    "sqlfluff",
+    "awscli",
+    "superset",
+    "great_expectations",
+    "permifrost",
+    "kms",
+    "target-sqlite",
+    "target-postgres",
+    "dbt-postgres",
+    "tap-with-state",
+    "tap-with-large-config",
+    "target-with-large-config",
+    "tap-meltano-yml",
+    "map-meltano-yml",
+    "target-meltano-yml",
+    "tap-subconfig-2-yml",
+    "target-subconfig-2-yml",
+    "tap-subconfig-1-yml",
+    "target-subconfig-1-yml",
+    "tap-snowflake-metrics-legacy",
+    "DataFrame:join",
+    "SQLAlchemy:execute",
+    "DataFrame:merge"
   ],
   "blast_radius": {
-    "tap-gitlab": 3,
-    "target-jsonl": 0,
-    "example": 0,
-    "tap-github": 0,
-    "tap-smoke-test": 1,
-    "target-csv": 0,
-    "tap-cloudwatch": 0,
-    "tap-meltanohub": 0,
-    "tap-spreadsheets-anywhere": 0,
-    "tap-slack": 0,
-    "tap-slack-public": 0,
-    "tap-google-analytics": 0,
-    "tap-github-meltano": 0,
-    "tap-github-search": 0,
-    "tap-snowflake": 0,
-    "tap-snowflake-metrics": 0,
-    "tap-snowflake-audit": 0,
-    "tap-snowflake-singer-activity": 0,
-    "target-yaml": 0,
-    "target-yaml-metrics": 0,
-    "target-yaml-audit": 0,
-    "target-snowflake": 0,
-    "target-apprise": 0,
-    "meltano-map-transformer": 0,
-    "airflow": 0,
-    "dbt-snowflake": 0,
-    "sqlfluff": 0,
-    "awscli": 0,
-    "superset": 0,
-    "great_expectations": 0,
-    "permifrost": 0,
-    "kms": 0,
-    "target-sqlite": 0,
-    "target-postgres": 0,
-    "dbt-postgres": 0,
-    "tap-with-state": 1,
-    "tap-with-large-config": 0,
-    "target-with-large-config": 0,
-    "tap-meltano-yml": 1,
-    "target-meltano-yml": 0,
-    "map-meltano-yml": 0,
-    "tap-subconfig-2-yml": 1,
-    "target-subconfig-2-yml": 0,
-    "tap-subconfig-1-yml": 1,
-    "target-subconfig-1-yml": 0
+    "DataFrame": 2,
+    "meltano\\src\\meltano\\core\\db.py": 1,
+    "meltano\\src\\meltano\\core\\block\\extract_load.py": 1,
+    "meltano\\src\\meltano\\core\\state_store\\db.py": 1,
+    "meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py": 1,
+    "meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py": 1
   }
 }
