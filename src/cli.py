@@ -28,7 +28,12 @@ def main():
     - Local repo path or GitHub URL
     - Git velocity window (default: 30 days)
     - Output directory (default: .cartography)
-    - Optional flags to run only Surveyor or Hydrologist
+    - Optional flags to run only Surveyor, Hydrologist, or Semanticist
+    Phases:
+    - Surveyor (Phase 1: static structure, git velocity, dead code, pagerank, blast radius)
+    - Hydrologist (Phase 2: data lineage)
+    - Semanticist (Phase 3: purpose statements, domain clustering, day-one answers, doc drift detection)
+    - All (runs full pipeline and integrates into KnowledgeGraph)
     """
     parser = argparse.ArgumentParser(description="Brownfield Cartographer CLI")
     parser.add_argument(
@@ -39,7 +44,9 @@ def main():
         "--output", default=".cartography", help="Directory for artifacts"
     )
     parser.add_argument(
-        "--phase", choices=["all", "surveyor", "hydrologist"], default="all"
+        "--phase",
+        choices=["all", "surveyor", "hydrologist", "semanticist"],
+        default="all",
     )
     args = parser.parse_args()
 
@@ -57,6 +64,15 @@ def main():
 
     print(f"[CLI] Running analysis on {repo_path} (phase={args.phase})...")
     run_analysis(repo_path, output_dir, days=args.days, phase=args.phase)
+
+    # Print artifact summary for Semanticist phase
+    if args.phase in ("all", "semanticist"):
+        print("[CLI] Semanticist artifacts generated:")
+        print(f" - {output_dir}/purpose_statements.json")
+        print(f" - {output_dir}/domain_map.json")
+        print(f" - {output_dir}/day_one_answers.json")
+        print(f" - {output_dir}/doc_drift_flags.json (if enabled in orchestrator)")
+
     print(f"[CLI] Analysis complete. Artifacts written to {output_dir}")
 
     if temp_dir:
