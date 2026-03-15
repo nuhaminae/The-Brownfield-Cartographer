@@ -9,18 +9,29 @@
 
 ## Project Review
 
-The Brownfield Cartographer is a multi‑agent system designed to analyse legacy codebases (brownfields) and produce actionable insights.  
-It builds static and dynamic dependency graphs, extracts semantic meaning, overlays temporal velocity data, and generates recommendations for stabilisation and refactoring.
+The Brownfield Cartographer is a multi‑agent codebase intelligence system designed to accelerate **Forward Deployed Engineer (FDE)** onboarding in brownfield environments.  
+It ingests any GitHub repository or local path and produces a **living, queryable knowledge graph** of the system’s architecture, data flows, and semantic structure.  
+
+This project directly addresses the **Day‑One Problem**: within 72 hours, an FDE must become useful in a large, undocumented production codebase. The Cartographer reduces navigation blindness, contextual amnesia, dependency opacity, and silent debt by building instruments that make codebases legible.
 
 ---
 
 ## Key Feature
 
-- **Surveyor**: Static structure analysis (AST parsing, module graph, git velocity).  
-- **Hydrologist**: Data lineage analysis (SQL lineage, DAG configs, blast radius).  
-- **Semantisist**: Semantic enrichment (docstrings, classification, architectural smells).  
-- **Archivist**: Temporal overlays (commit history, churn hotspots).  
-- **Navigator**: Integration, CLI orchestration, recommendations, roadmap.  
+- **Surveyor (Phase 1)**:  
+  Static structure analysis using tree‑sitter. Builds module graphs, detects imports, computes PageRank, identifies dead code, and overlays git velocity.  
+
+- **Hydrologist (Phase 2)**:  
+  Data lineage analysis across Python, SQL, and YAML. Constructs DAGs of data flow, identifies sources and sinks, and computes blast radius for module failures.  
+
+- **Semanticist (Phase 3)**:  
+  LLM‑powered semantic enrichment. Generates purpose statements, detects documentation drift, clusters modules into domains, and synthesises answers to the Five FDE Day‑One Questions.  
+
+- **Archivist (Phase 4)**:  
+  Produces living artifacts: `CODEBASE.md`, onboarding briefs, semantic indexes, and trace logs. Maintains context for AI agents and human engineers.  
+
+- **Navigator (Phase 5)**:  
+  Interactive query interface. Supports dependency queries, lineage tracing, blast radius analysis, and module explanations. Enables both natural language and structured interrogation of the knowledge graph.  
 
 ---
 
@@ -34,6 +45,11 @@ It builds static and dynamic dependency graphs, extracts semantic meaning, overl
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
 - [Usage](#usage)
+- [Architecture Diagram](#architecture-diagram)
+- [Day-One Accuracy Analysis](#day-one-accuracy-analysis)
+- [Limitations](#limitations)
+- [FDE Applicability](#fde-applicability)
+- [Self-Audit Results](#self-audit-results)
 - [Project Status](#project-status)
 
 ---
@@ -44,24 +60,18 @@ It builds static and dynamic dependency graphs, extracts semantic meaning, overl
 The-Brownfield-Cartographer/
 ├── src/
 │   ├── cli.py                  # Entry point, runs analysis
-│   ├── orchestrator.py         # Wires Surveyor + Hydrologist, serialises outputs
+│   ├── orchestrator.py         # Wires all agents, serialises outputs
 │   ├── models/                 # Pydantic schemas (Node, Edge, Graph)
-│   │   ├── module_node.py
-│   │   ├── edge.py
-│   │   └── graph_schema.py
-│   ├── analysers/
-│   │   ├── tree_sitter_analyser.py   # AST parsing with LanguageRouter
-│   │   ├── sql_lineage.py            # SQL lineage via sqlglot
-│   │   └── dag_config_parser.py      # YAML DAG config parsing
-│   ├── agents/
-│   │   ├── surveyor.py          # Module graph, PageRank, git velocity
-│   │   └── hydrologist.py       # DataLineageGraph, blast radius
-│   └── graph/
-│       └── knowledge_graph.py   # NetworkX wrapper, integration
-├── .cartography/
-│   ├── module_graph.json        # Static structure graph
-│   ├── lineage_graph.json       # Data lineage graph
-│   └── knowledge_graph.json     # Combined graph (optional)
+│   ├── analyzers/              # AST, SQL, DAG parsers
+│   ├── agents/                 # Surveyor, Hydrologist, Semanticist, Archivist, Navigator
+│   └── graph/knowledge_graph.py# NetworkX wrapper, integration
+├── .cartography/               # Analysis artifacts
+│   ├── module_graph.json
+│   ├── lineage_graph.json
+│   ├── knowledge_graph.json
+│   ├── CODEBASE.md
+│   ├── onboarding_brief.md
+│   └── cartography_trace.jsonl
 ├── pyproject.toml               # Dependencies (locked with uv)
 └── README.md                    # Documentation
 ```
@@ -79,15 +89,9 @@ The-Brownfield-Cartographer/
 ### Setup
 
 ```bash
-# Clone repo
 git clone https://github.com/nuhaminae/The-Brownfield-Cartographer.git
 cd The-Brownfield-Cartographer
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Or with uv (recommended)
-uv sync
+uv sync   # recommended
 ```
 
 ---
@@ -108,22 +112,68 @@ python -m src.cli --repo ./meltano --days 60
 
 # Specify output directory (default .cartography/)
 python -m src.cli --repo ./meltano --output ./analysis_output
+
+# Step by step execution
+python -m src.cli --repo ./meltano --days 90 --phase surveyor
+python -m src.cli --repo ./meltano --days 90 --phase hydrologist
+python -m src.cli --repo ./meltano --days 90 --phase semanticist
+python -m src.cli --repo ./meltano --days 90 --phase archivist
+python -m src.cli --repo ./meltano --days 90 --phase navigator
+
 ```
 
-Artifacts will be written to `.cartography/` (or your chosen output directory):
+Artifacts will be written to `.cartography/` (or your chosen output directory).
 
-- `module_graph.json` → Static module graph.  
-- `lineage_graph.json` → Data lineage graph.  
-- `knowledge_graph.json` → Combined graph (optional).  
+---
+
+## Architecture Diagram
+
+**Pipeline Design Rationale:**  
+Surveyor builds the structural skeleton → Hydrologist overlays lineage → Semanticist adds semantic meaning → Archivist produces living artifacts → Navigator enables interactive queries.  
+The knowledge graph is the central data store, combining structural, lineage, and semantic layers.  
+
+---
+
+## Day-One Accuracy Analysis
+
+Manual reconnaissance vs. system outputs showed:  
+
+- **Correct:** Velocity hotspots, blast radius candidates.  
+- **Weak:** Ingestion detection (Surveyor missed taps), critical outputs (Hydrologist edges not mapped to datasets), business logic concentration (Pagerank skewed to configs).  
+- **Root Causes:** Sparse ingestion signals, pagerank noise, lineage limited to direct descendants.  
+
+*(See RECONNAISSANCE.md for full side-by-side comparison.)*
+
+---
+
+## Limitations
+
+The Cartographer accelerates onboarding but cannot fully replace human judgment.  
+
+- Dynamic SQL/Python references unresolved.  
+- Semantic clustering mislabels domains.  
+- Pagerank overweights configs.  
+- Ingestion detection fails when sources are abstracted.  
+- Business rules and organizational context remain opaque.  
+
+---
+
+## FDE Applicability
+
+In a real client engagement, the Cartographer would be deployed on Day One to rapidly map the system. Surveyor and Hydrologist provide visibility, Semanticist adds meaning, Archivist produces living documentation, and Navigator enables interactive Q&A. This transforms the first 72 hours from guesswork into evidence‑driven onboarding, with human engineers validating ingestion paths and interpreting ambiguous lineage.
+
+---
+
+## Self-Audit Results
+
+Running the Cartographer on the Week 1 repo revealed discrepancies:  
+
+- Manual notes described ingestion as “simple CSV load.”  
+- Cartographer flagged hidden dependencies.  
+- This exposed blind spots in documentation and validated the Cartographer’s ability to surface overlooked complexity.  
 
 ---
 
 ## Project Status
 
-The project is ongoing.  
-
-- **Interim submission** delivers Phases 1–2 (Surveyor + Hydrologist) with CLI + Orchestrator and `.cartography/` artifacts.  
-
-- **Final submission** delivers Phases 3–5 (Semantisist, Archivist, Navigator) with semantic enrichment, temporal overlays, and strategic recommendations.  
-
-Check the [commit history](https://github.com/nuhaminae/The-Brownfield-Cartographer/) for progress.
+The project is completed. Check the [commit history](https://github.com/nuhaminae/The-Brownfield-Cartographer/) for update.
