@@ -1,6 +1,7 @@
 # src/agents/surveyor.py
 # The Brownfield Cartographer Surveyor
 
+import ast
 import logging
 import subprocess
 from pathlib import Path
@@ -95,6 +96,9 @@ class Surveyor:
         graph = nx.DiGraph()
         module_nodes = []
 
+        def normalise_path(path: str) -> str:
+            return str(path).replace("\\", "/").strip().lower()
+
         for file_path in self.repo_path.rglob("*"):
             if file_path.suffix.lower() in [
                 ".py",
@@ -106,40 +110,89 @@ class Surveyor:
             ]:
                 try:
                     module = analyse_module(file_path)
+
+                    # --- Read full source code and docstrings ---
+                    source_code, docstring, extra_docstrings = "", "", {}
+                    if file_path.suffix.lower() == ".py":
+                        try:
+                            source_code = file_path.read_text(encoding="utf-8")
+                            tree = ast.parse(source_code)
+
+                            # Module-level docstring
+                            docstring = ast.get_docstring(tree) or ""
+
+                            # Collect function/class docstrings
+                            for node in ast.walk(tree):
+                                if isinstance(
+                                    node,
+                                    (
+                                        ast.FunctionDef,
+                                        ast.AsyncFunctionDef,
+                                        ast.ClassDef,
+                                    ),
+                                ):
+                                    doc = ast.get_docstring(node) or ""
+                                    if doc:
+                                        extra_docstrings[node.name] = doc
+                        except Exception as e:
+                            logging.warning(
+                                f"[Surveyor] Failed to extract code/docstrings from {file_path}: {e}"
+                            )
+
+                    elif file_path.suffix.lower() in [".yml", ".yaml", ".sql"]:
+                        try:
+                            source_code = file_path.read_text(encoding="utf-8")
+                        except Exception as e:
+                            logging.warning(
+                                f"[Surveyor] Failed to read {file_path}: {e}"
+                            )
+
+                    # populate attrs
+                    module.attrs["code"] = source_code
+                    module.attrs["docstring"] = docstring
+                    if extra_docstrings:
+                        module.attrs["function_docstrings"] = extra_docstrings
+
                     module_nodes.append(module)
+
+                    # Normalised path
+                    norm_path = normalise_path(module.path)
 
                     # Add node with all attributes
                     graph.add_node(
-                        module.path,
+                        norm_path,
                         imports=module.imports,
                         functions=module.functions,
                         classes=[c.to_dict() for c in module.classes],
                         pairs=module.pairs,
                         tables=module.tables,
                         queries=module.queries,
+                        attrs=module.attrs,
                     )
 
                     # Add edges for imports
                     for imp in module.imports:
-                        graph.add_edge(module.path, imp, type=EdgeType.IMPORT.value)
+                        graph.add_edge(
+                            norm_path, normalise_path(imp), type=EdgeType.IMPORT.value
+                        )
 
                     # Add edges for SQL tables
                     for table in module.tables:
-                        graph.add_edge(module.path, table, type=EdgeType.SQL.value)
+                        graph.add_edge(
+                            norm_path, normalise_path(table), type=EdgeType.SQL.value
+                        )
 
                     # Add edges for YAML pairs
                     for pair in module.pairs:
                         if pair["value"] is not None:
-                            # Edge to specific key=value pair
                             graph.add_edge(
-                                module.path,
+                                norm_path,
                                 f"{pair['key']}={pair['value']}",
                                 type=EdgeType.CONFIG.value,
                             )
                         else:
-                            # Edge to key only (nested mapping, no scalar)
                             graph.add_edge(
-                                module.path, pair["key"], type=EdgeType.DAG.value
+                                norm_path, pair["key"], type=EdgeType.DAG.value
                             )
 
                 except Exception as e:
