@@ -47,6 +47,9 @@ class ModuleNode(BaseModel):
     pairs: List[Dict[str, Optional[str]]] = []
     tables: List[str] = []
     queries: List[str] = []
+    attrs: Dict[str, Any] = {}  # must hold "code" and optionally "docstring"
+    purpose_statement: str = ""
+    domain_cluster: str = ""
 
     def to_dict(self) -> Dict[str, Any]:
         """Serialise the ModuleNode object into a dictionary for JSON export."""
