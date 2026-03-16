@@ -1,0 +1,4 @@
+{"phase": "archivist", "artifact": "CODEBASE.md", "status": "complete", "graphs_used": [], "confidence": "medium"}
+{"phase": "archivist", "artifact": "onboarding_brief.md", "status": "complete", "graphs_used": ["module:pagerank,velocity,dead_code_summary", "lineage:sources,sinks,blast_radius"], "confidence": "high"}
+{"phase": "archivist", "artifact": "lineage_graph.json", "status": "complete", "graphs_used": [], "confidence": "medium"}
+{"phase": "archivist", "artifact": "semantic_index", "status": "complete", "graphs_used": ["module:nodes"], "confidence": "medium"}
