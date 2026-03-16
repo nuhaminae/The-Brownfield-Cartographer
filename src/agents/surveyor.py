@@ -5,6 +5,7 @@ import ast
 import logging
 import subprocess
 from pathlib import Path
+from typing import List
 
 import networkx as nx
 
@@ -61,7 +62,7 @@ class Surveyor:
 
             # YAML heuristic: pairs with None values (nested mappings without scalars)
             if hasattr(module, "pairs") and module.pairs:
-                dead_functions += sum(1 for p in module.pairs if p["value"] is None)
+                dead_functions += sum(1 for p in module.pairs if p.value is None)
 
             # SQL heuristic: queries without tables
             if module.queries and not module.tables:
@@ -91,6 +92,13 @@ class Surveyor:
         return dict(
             sorted(blast_radius.items(), key=lambda x: x[1], reverse=True)[:cutoff]
         )
+
+    def detect_cycles(self, graph):
+        """Return strongly connected components (circular dependencies)."""
+        sccs = list(nx.strongly_connected_components(graph))
+        # Only keep components with more than 1 node (true cycles)
+        cycles = [list(comp) for comp in sccs if len(comp) > 1]
+        return cycles
 
     def run(self) -> DataLineageGraph:
         graph = nx.DiGraph()
@@ -170,29 +178,53 @@ class Surveyor:
                         attrs=module.attrs,
                     )
 
-                    # Add edges for imports
+                    # --- Edges ---
+
+                    # Imports
                     for imp in module.imports:
                         graph.add_edge(
                             norm_path, normalise_path(imp), type=EdgeType.IMPORT.value
                         )
 
-                    # Add edges for SQL tables
-                    for table in module.tables:
-                        graph.add_edge(
-                            norm_path, normalise_path(table), type=EdgeType.SQL.value
-                        )
-
-                    # Add edges for YAML pairs
-                    for pair in module.pairs:
-                        if pair["value"] is not None:
-                            graph.add_edge(
-                                norm_path,
-                                f"{pair['key']}={pair['value']}",
-                                type=EdgeType.CONFIG.value,
-                            )
+                    # SQL queries → tables (with query-only fallback)
+                    for query in module.queries:
+                        if module.tables:
+                            for table in module.tables:
+                                graph.add_edge(
+                                    norm_path,
+                                    normalise_path(table),
+                                    type=EdgeType.SQL.value,
+                                    attrs={"query": query},
+                                )
                         else:
                             graph.add_edge(
-                                norm_path, pair["key"], type=EdgeType.DAG.value
+                                norm_path,
+                                f"query:{query}",
+                                type=EdgeType.SQL.value,
+                                attrs={"query": query},
+                            )
+
+                    # YAML pairs
+                    for idx, pair in enumerate(module.pairs):
+                        if pair.kind == "scalar":
+                            target = (
+                                f"{pair.key}={pair.value}"
+                                if pair.key
+                                else str(pair.value)
+                            )
+                            graph.add_edge(
+                                norm_path,
+                                target,
+                                type=EdgeType.CONFIG.value,
+                                attrs={"kind": "scalar"},
+                            )
+                        elif pair.kind == "mapping":
+                            target = pair.key if pair.key else f"sequence_item:{idx}"
+                            graph.add_edge(
+                                norm_path,
+                                target,
+                                type=EdgeType.DAG.value,
+                                attrs={"kind": "mapping"},
                             )
 
                 except Exception as e:
@@ -203,14 +235,84 @@ class Surveyor:
         velocity = self.extract_git_velocity()
         dead_code = self.detect_dead_code(module_nodes)
         blast_radius = self.compute_blast_radius(graph)
+        cycles = self.detect_cycles(graph)
 
         return DataLineageGraph(
             nodes=[m.to_dict() for m in module_nodes],
             edges=[
-                Edge(source=u, target=v, type=d["type"]).to_dict()
+                Edge(
+                    source=u, target=v, type=d["type"], attrs=d.get("attrs", {})
+                ).to_dict()
                 for u, v, d in graph.edges(data=True)
             ],
             pagerank=pagerank_scores,
             velocity={"hotspots": velocity["hotspots"], "dead_code_summary": dead_code},
             blast_radius=blast_radius,
+            cycles=cycles,
+        )
+
+    def update_nodes(self, changed_files: List[str]) -> None:
+        """
+        Incrementally re-analyse only the changed files and update the graph.
+        This avoids re-running the full survey on the entire repo.
+        """
+        graph = self.graph  # assume you store the nx.DiGraph in self after run()
+        module_nodes = (
+            self.module_nodes
+        )  # assume you store analysed modules in self after run()
+
+        def normalise_path(path: str) -> str:
+            return str(path).replace("\\", "/").strip().lower()
+
+        for file_path in changed_files:
+            path_obj = Path(file_path)
+            if path_obj.exists() and path_obj.suffix.lower() in [
+                ".py",
+                ".js",
+                ".ts",
+                ".sql",
+                ".yaml",
+                ".yml",
+            ]:
+                try:
+                    module = analyse_module(path_obj)
+                    # refresh code/docstring extraction as in run()
+                    source_code = path_obj.read_text(encoding="utf-8")
+                    module.attrs["code"] = source_code
+                    # update module_nodes list (replace old entry if exists)
+                    module_nodes = [
+                        m
+                        for m in module_nodes
+                        if normalise_path(m.path) != normalise_path(file_path)
+                    ]
+                    module_nodes.append(module)
+                    # update graph node
+                    graph.remove_node(normalise_path(file_path))
+                    graph.add_node(normalise_path(file_path), attrs=module.attrs)
+                    # re-add edges (imports, queries, yaml pairs, etc.)
+                    # same logic as in run()
+                except Exception as e:
+                    logging.warning(f"[Surveyor] Failed to update {file_path}: {e}")
+                    continue
+
+        # recompute analytics for updated graph
+        pagerank_scores = nx.pagerank(graph) if graph.number_of_nodes() > 0 else {}
+        velocity = self.extract_git_velocity()
+        dead_code = self.detect_dead_code(module_nodes)
+        blast_radius = self.compute_blast_radius(graph)
+        cycles = self.detect_cycles(graph)
+
+        # update stored DataLineageGraph
+        self.data_graph = DataLineageGraph(
+            nodes=[m.to_dict() for m in module_nodes],
+            edges=[
+                Edge(
+                    source=u, target=v, type=d["type"], attrs=d.get("attrs", {})
+                ).to_dict()
+                for u, v, d in graph.edges(data=True)
+            ],
+            pagerank=pagerank_scores,
+            velocity={"hotspots": velocity["hotspots"], "dead_code_summary": dead_code},
+            blast_radius=blast_radius,
+            cycles=cycles,
         )
