@@ -1,3 +1,7 @@
+# src/analysers/dag_config_analyser.py
+# The Brownfield Cartographer DAG Config Analyser
+
+
 import json
 import logging
 from pathlib import Path
@@ -60,6 +64,10 @@ class DAGConfigAnalyser:
                                 "source": upstream,
                                 "target": task["id"],
                                 "type": "airflow",
+                                "attrs": {
+                                    "file": str(self.config_file),
+                                    "task_type": "airflow_task",
+                                },
                             }
                         )
 
@@ -74,6 +82,14 @@ class DAGConfigAnalyser:
                 if "depends_on" in model and "name" in model:
                     for dep in model["depends_on"]:
                         edges.append(
-                            {"source": dep, "target": model["name"], "type": "dbt"}
+                            {
+                                "source": dep,
+                                "target": model["name"],
+                                "type": "dbt",
+                                "attrs": {
+                                    "file": str(self.config_file),
+                                    "model_type": "dbt_model",
+                                },
+                            }
                         )
         return edges, node_attrs
