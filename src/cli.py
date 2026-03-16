@@ -15,26 +15,50 @@ def clone_repo(github_url: str, target_dir: Path) -> Path:
     """Clone a GitHub repo into target_dir and return the local path."""
     try:
         subprocess.run(["git", "clone", github_url, str(target_dir)], check=True)
+        print(f"[CLI] Successfully cloned {github_url} into {target_dir}")
         return target_dir
     except subprocess.CalledProcessError as e:
         print(f"[CLI] Error cloning repo: {e}")
         sys.exit(1)
 
 
+def print_artifact_summary(output_dir: Path, phase: str):
+    """Print a summary of generated artifacts with descriptions."""
+    summaries = {
+        "surveyor": [
+            ("module_graph.json", "static code/config structure"),
+        ],
+        "hydrologist": [
+            ("lineage_graph.json", "data pipeline lineage"),
+            ("knowledge_graph.json", "unified graph with blast radius + bridge nodes"),
+        ],
+        "semanticist": [
+            ("purpose_statements.json", "purpose statements per module"),
+            ("domain_map.json", "clustered domains"),
+            ("day_one_answers.json", "answers to onboarding questions"),
+            ("doc_drift_flags.json", "documentation drift detection"),
+        ],
+        "archivist": [
+            ("CODEBASE.md", "structured overview for AI coding agents"),
+            ("onboarding_brief.md", "Day-One Brief answering Five FDE questions"),
+            ("lineage_graph.json", "serialised lineage graph"),
+            ("semantic_index/", "vector store of module purpose statements"),
+            ("cartography_trace.jsonl", "audit log of agent actions"),
+        ],
+    }
+
+    if phase == "all":
+        print("[CLI] Full pipeline artifacts generated:")
+        for p in ("surveyor", "hydrologist", "semanticist"):
+            for fname, desc in summaries[p]:
+                print(f" - {output_dir}/{fname} ({desc})")
+    else:
+        print(f"[CLI] {phase.capitalize()} artifacts generated:")
+        for fname, desc in summaries[phase]:
+            print(f" - {output_dir}/{fname} ({desc})")
+
+
 def main():
-    """
-    CLI entry point.
-    Supports:
-    - Local repo path or GitHub URL
-    - Git velocity window (default: 30 days)
-    - Output directory (default: .cartography)
-    - Optional flags to run only Surveyor, Hydrologist, or Semanticist
-    Phases:
-    - Surveyor (Phase 1: static structure, git velocity, dead code, pagerank, blast radius)
-    - Hydrologist (Phase 2: data lineage)
-    - Semanticist (Phase 3: purpose statements, domain clustering, day-one answers, doc drift detection)
-    - All (runs full pipeline and integrates into KnowledgeGraph)
-    """
     parser = argparse.ArgumentParser(description="Brownfield Cartographer CLI")
     parser.add_argument(
         "--repo", required=True, help="Path to local repo or GitHub URL"
@@ -45,9 +69,10 @@ def main():
     )
     parser.add_argument(
         "--phase",
-        choices=["all", "surveyor", "hydrologist", "semanticist"],
+        choices=["all", "surveyor", "hydrologist", "semanticist", "archivist"],
         default="all",
     )
+
     args = parser.parse_args()
 
     repo_path = Path(args.repo)
@@ -65,18 +90,14 @@ def main():
     print(f"[CLI] Running analysis on {repo_path} (phase={args.phase})...")
     run_analysis(repo_path, output_dir, days=args.days, phase=args.phase)
 
-    # Print artifact summary for Semanticist phase
-    if args.phase in ("all", "semanticist"):
-        print("[CLI] Semanticist artifacts generated:")
-        print(f" - {output_dir}/purpose_statements.json")
-        print(f" - {output_dir}/domain_map.json")
-        print(f" - {output_dir}/day_one_answers.json")
-        print(f" - {output_dir}/doc_drift_flags.json (if enabled in orchestrator)")
+    # Print artifact summary
+    print_artifact_summary(output_dir, args.phase)
 
     print(f"[CLI] Analysis complete. Artifacts written to {output_dir}")
 
     if temp_dir:
         shutil.rmtree(temp_dir, ignore_errors=True)
+        print(f"[CLI] Cleaned up temporary directory {temp_dir}")
 
 
 if __name__ == "__main__":
