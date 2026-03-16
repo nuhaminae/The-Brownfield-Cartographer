@@ -1,0 +1,9 @@
+stages:
+  semantic_index:
+    cmd: python -m src.orchestrator run_analysis --phase archivist
+    deps:
+      - src/orchestrator.py
+      - src/agents/archivist.py
+      - src/agents/semanticist.py
+    outs:
+      - .cartography/semantic_index
