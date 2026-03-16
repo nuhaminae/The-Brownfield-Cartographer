@@ -1,0 +1,23 @@
+schema: '2.0'
+stages:
+  semantic_index:
+    cmd: python -m src.cli --repo ./meltano --days 90 --phase archivist
+    deps:
+    - path: src/agents/archivist.py
+      hash: md5
+      md5: 1130b2f69bfdce19cd654256e6a85029
+      size: 14879
+    - path: src/agents/semanticist.py
+      hash: md5
+      md5: 4f15c777032784069fa8b6cde9bfba6f
+      size: 16922
+    - path: src/orchestrator.py
+      hash: md5
+      md5: 66f583f470d3e819928fef2a3df3f3a7
+      size: 10903
+    outs:
+    - path: .cartography/semantic_index
+      hash: md5
+      md5: 21d3961a6cd65591f0e2e4b46787ef66.dir
+      size: 0
+      nfiles: 2621

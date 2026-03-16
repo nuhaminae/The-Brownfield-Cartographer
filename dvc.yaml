@@ -1,6 +1,6 @@
 stages:
   semantic_index:
-    cmd: python -m src.orchestrator run_analysis --phase archivist
+    cmd: python -m src.cli --repo ./meltano --days 90 --phase archivist
     deps:
       - src/orchestrator.py
       - src/agents/archivist.py
