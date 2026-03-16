@@ -4,6 +4,3 @@
 # Python Artifacts
 __pycache__/
 *settings.json
-
-# Run Artifacts
-semantic_index/
