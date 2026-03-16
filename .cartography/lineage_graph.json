@@ -1,2693 +1,3834 @@
 {
   "nodes": [
-    {
-      "id": "tap-gitlab",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "target-jsonl",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-state-s3\\meltano.yml",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "example",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-env-precedence\\meltano.yml",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "tap-github",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-smoke-test",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-expand-envvars-in-array\\meltano.yml",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "target-csv",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-expand-envvars-in-array\\meltano.yml",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "tap-cloudwatch",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-meltanohub",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-spreadsheets-anywhere",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-slack",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-slack-public",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-google-analytics",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-github-meltano",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-github-search",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-snowflake",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-snowflake-metrics",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-snowflake-audit",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-snowflake-singer-activity",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "target-yaml",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "target-yaml-metrics",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "target-yaml-audit",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "target-snowflake",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "target-apprise",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "meltano-map-transformer",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "mapper"
-      }
-    },
-    {
-      "id": "airflow",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "dbt-snowflake",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "sqlfluff",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "awscli",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "superset",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "great_expectations",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "permifrost",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "kms",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "target-sqlite",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-migrations\\meltano.yml",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "target-postgres",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-run\\meltano.yml",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "dbt-postgres",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-run\\ending-meltano.yml",
-        "type": "utilitie"
-      }
-    },
-    {
-      "id": "tap-with-state",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-run-merge-states\\meltano.yml",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "tap-with-large-config",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\large_config_project\\meltano.yml",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "target-with-large-config",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\large_config_project\\schedule.yml",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "tap-meltano-yml",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\multifile_project\\meltano.yml",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "map-meltano-yml",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\multifile_project\\meltano.yml",
-        "type": "mapper"
-      }
-    },
-    {
-      "id": "target-meltano-yml",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\multifile_project\\meltano.yml",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "tap-subconfig-2-yml",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\multifile_project\\subconfig_2.yml",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "target-subconfig-2-yml",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\multifile_project\\subconfig_2.yml",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "tap-subconfig-1-yml",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\multifile_project\\subfolder\\subconfig_1.yml",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "target-subconfig-1-yml",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\multifile_project\\subfolder\\subconfig_1.yml",
-        "type": "loader"
-      }
-    },
-    {
-      "id": "tap-snowflake-metrics-legacy",
-      "attrs": {
-        "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
-        "type": "extractor"
-      }
-    },
-    {
-      "id": "meltano\\noxfile.py",
-      "attrs": {
-        "file": "meltano\\noxfile.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\scripts\\alembic_freeze.py",
-      "attrs": {
-        "file": "meltano\\scripts\\alembic_freeze.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "DataFrame",
-      "attrs": {}
-    },
-    {
-      "id": "DataFrame:join",
-      "attrs": {}
-    },
-    {
-      "id": "meltano\\scripts\\generate_docker_tags.py",
-      "attrs": {
-        "file": "meltano\\scripts\\generate_docker_tags.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\asserts.py",
-      "attrs": {
-        "file": "meltano\\tests\\asserts.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\conftest.py",
-      "attrs": {
-        "file": "meltano\\tests\\conftest.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\test_meta.py",
-      "attrs": {
-        "file": "meltano\\tests\\test_meta.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\integration\\example-library\\meltano-run-merge-states\\tap.py",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-run-merge-states\\tap.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\integration\\example-library\\meltano-env-precedence\\env-var-in-pip-url-example-124\\example.py",
-      "attrs": {
-        "file": "meltano\\integration\\example-library\\meltano-env-precedence\\env-var-in-pip-url-example-124\\example.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\add.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\add.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\cli.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\cli.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\compile.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\compile.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\config.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\config.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\docs.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\docs.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\dragon.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\dragon.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\elt.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\elt.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\environment.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\environment.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\hub.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\hub.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\initialize.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\initialize.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\install.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\install.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\invoke.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\invoke.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\job.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\job.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\lock.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\lock.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\logs.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\logs.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\params.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\params.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\remove.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\remove.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\run.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\run.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\schedule.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\schedule.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\schema.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\schema.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\select_entities.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\select_entities.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\state.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\state.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\upgrade.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\upgrade.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\utils.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\utils.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\validate.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\validate.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\_didyoumean.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\_didyoumean.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\__main__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\__main__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\cli_messages.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\cli_messages.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\config_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\config_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\constants.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\constants.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\db.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\db.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "SQLAlchemy:execute",
-      "attrs": {}
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\elt_context.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\elt_context.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\environment.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\environment.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\environment_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\environment_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\error.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\error.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\job_state.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\job_state.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\locked_definition_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\locked_definition_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\meltano_file.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\meltano_file.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\meltano_invoker.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\meltano_invoker.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\migration_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\migration_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\models.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\models.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin_install_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin_install_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin_invoker.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin_invoker.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin_location_remove.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin_location_remove.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin_lock_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin_lock_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin_remove_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin_remove_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin_repository.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin_repository.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin_test_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin_test_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\project.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\project.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\project_add_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\project_add_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\project_dirs_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\project_dirs_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\project_files.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\project_files.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\project_init_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\project_init_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\project_plugins_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\project_plugins_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\project_settings_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\project_settings_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\schedule.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\schedule.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\schedule_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\schedule_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\select_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\select_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\setting.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\setting.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\settings_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\settings_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "DataFrame:merge",
-      "attrs": {}
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\settings_store.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\settings_store.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\setting_definition.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\setting_definition.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\sqlalchemy.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\sqlalchemy.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\task_sets.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\task_sets.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\task_sets_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\task_sets_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\transform_add_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\transform_add_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\upgrade_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\upgrade_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\user_config.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\user_config.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\validation_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\validation_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\venv_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\venv_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\version_check.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\version_check.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\yaml.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\yaml.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\_compat.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\_compat.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\_packaging.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\_packaging.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\_state.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\_state.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\_types.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\_types.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\env.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\env.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\schemas\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\schemas\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\interactive\\config.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\interactive\\config.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\interactive\\utils.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\interactive\\utils.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\cli\\interactive\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\cli\\interactive\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\behavior\\addon.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\behavior\\addon.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\behavior\\canonical.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\behavior\\canonical.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\behavior\\hookable.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\behavior\\hookable.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\behavior\\name_eq.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\behavior\\name_eq.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\behavior\\visitor.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\behavior\\visitor.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\behavior\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\behavior\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\block\\blockset.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\block\\blockset.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\block\\block_parser.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\block\\block_parser.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\block\\extract_load.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\block\\extract_load.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\block\\future_utils.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\block\\future_utils.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\block\\ioblock.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\block\\ioblock.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\block\\plugin_command.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\block\\plugin_command.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\block\\singer.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\block\\singer.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\block\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\block\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\bundle\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\bundle\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\container\\container_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\container\\container_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\container\\container_spec.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\container\\container_spec.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\container\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\container\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\hub\\client.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\hub\\client.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\hub\\schema.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\hub\\schema.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\hub\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\hub\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\job\\finder.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\job\\finder.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\job\\job.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\job\\job.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\job\\stale_job_failer.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\job\\stale_job_failer.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\job\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\job\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\logging\\formatters.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\logging\\formatters.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\logging\\job_logging_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\logging\\job_logging_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\logging\\models.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\logging\\models.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\logging\\output_logger.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\logging\\output_logger.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\logging\\parsers.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\logging\\parsers.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\logging\\renderers.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\logging\\renderers.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\logging\\utils.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\logging\\utils.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\logging\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\logging\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\manifest\\cache.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\manifest\\cache.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\manifest\\contexts.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\manifest\\contexts.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\manifest\\jsonschema.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\manifest\\jsonschema.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\manifest\\manifest.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\manifest\\manifest.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\manifest\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\manifest\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\airflow.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\airflow.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\base.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\base.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\command.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\command.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\config_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\config_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\error.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\error.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\factory.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\factory.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\file.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\file.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\meltano_file.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\meltano_file.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\project_plugin.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\project_plugin.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\requirements.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\requirements.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\settings_service.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\settings_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\superset.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\superset.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\utility.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\utility.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\runner\\dbt.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\runner\\dbt.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\runner\\singer.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\runner\\singer.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\runner\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\runner\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\base.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\base.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\db.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\db.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\filesystem.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\filesystem.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\schemas.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\schemas.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\tracker.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\tracker.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\utils\\pidfile.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\utils\\pidfile.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\utils\\python_compatibility.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\utils\\python_compatibility.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\utils\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\utils\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\_protocols\\el_context.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\_protocols\\el_context.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\_protocols\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\_protocols\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\dbt\\base.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\dbt\\base.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\dbt\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\dbt\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\singer\\base.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\singer\\base.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\singer\\mapper.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\singer\\mapper.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\singer\\tap.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\singer\\tap.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\singer\\target.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\singer\\target.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\plugin\\singer\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\plugin\\singer\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\azure\\backend.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\azure\\backend.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\azure\\settings.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\azure\\settings.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\azure\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\azure\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\google\\backend.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\google\\backend.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\google\\settings.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\google\\settings.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\google\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\google\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\s3\\backend.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\s3\\backend.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\s3\\settings.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\s3\\settings.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\state_store\\s3\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\state_store\\s3\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\contexts\\base.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\base.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\contexts\\cli.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\cli.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\contexts\\environment.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\environment.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\contexts\\exception.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\exception.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\contexts\\plugins.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\plugins.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\contexts\\project.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\project.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\core\\tracking\\contexts\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\utils\\dialect_typing.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\utils\\dialect_typing.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\utils\\__init__.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\utils\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\23ea52e6d784_add_resource_type_to_embed_token.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\23ea52e6d784_add_resource_type_to_embed_token.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\367228df6a43_add_trigger_to_job.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\367228df6a43_add_trigger_to_job.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\53e97221d99f_add_run_id_to_job.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\53e97221d99f_add_run_id_to_job.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\5b43800443d1_rename_job_to_job_run_and_job_id_to_job_.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\5b43800443d1_rename_job_to_job_run_and_job_id_to_job_.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\6828cc5b1a4f_create_dedicated_state_table.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\6828cc5b1a4f_create_dedicated_state_table.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\6ef30ab7b8e5_.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\6ef30ab7b8e5_.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\87d9638f6ac6_add_subscription.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\87d9638f6ac6_add_subscription.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\990c0665f3ce_ensure_user_login_count_default_value.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\990c0665f3ce_ensure_user_login_count_default_value.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\a3e2b0a4937d_add_login_audit_columns.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\a3e2b0a4937d_add_login_audit_columns.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\b4c05e463b53_.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\b4c05e463b53_.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\c0efb3c314eb_drop_ui_api_tables.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\c0efb3c314eb_drop_ui_api_tables.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\ceb00d7ff3bd_create_the_embedtoken_table.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\ceb00d7ff3bd_create_the_embedtoken_table.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\d135f52a6f49_add_last_heartbeat_at_column_to_job.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\d135f52a6f49_add_last_heartbeat_at_column_to_job.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\e4fbabc3fed6_add_last_activity_at_column.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\e4fbabc3fed6_add_last_activity_at_column.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\src\\meltano\\migrations\\versions\\f4c225a9492f_create_dedicated_job_state_table.py",
-      "attrs": {
-        "file": "meltano\\src\\meltano\\migrations\\versions\\f4c225a9492f_create_dedicated_job_state_table.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\benchmarks\\test_state_backend_benchmarks.py",
-      "attrs": {
-        "file": "meltano\\tests\\benchmarks\\test_state_backend_benchmarks.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\benchmarks\\test_tap_benchmarks.py",
-      "attrs": {
-        "file": "meltano\\tests\\benchmarks\\test_tap_benchmarks.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\cli.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\cli.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\core.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\core.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\custom_addon.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\custom_addon.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\fs.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\fs.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\state_backends.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\state_backends.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\utils.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\utils.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\db\\mssql.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\db\\mssql.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\db\\postgresql.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\db\\postgresql.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\db\\postgresql_psycopg2.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\db\\postgresql_psycopg2.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\db\\sqlite.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\db\\sqlite.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\db\\__init__.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\db\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\docker\\snowplow.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\docker\\snowplow.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\fixtures\\docker\\__init__.py",
-      "attrs": {
-        "file": "meltano\\tests\\fixtures\\docker\\__init__.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_add.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_add.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_cli.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_cli.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_compile.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_compile.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_config.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_config.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_didyoumean.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_didyoumean.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_elt.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_elt.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_environment.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_environment.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_hub.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_hub.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_initialize.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_initialize.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_install.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_install.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_invoke.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_invoke.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_job_cmd.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_job_cmd.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_lock.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_lock.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_logs.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_logs.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_remove.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_remove.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_run.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_run.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_schedule.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_schedule.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_select.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_select.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_state.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_state.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\cli\\test_upgrade.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\cli\\test_upgrade.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_db_compat.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_db_compat.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_db_connection.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_db_connection.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_elt_context.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_elt_context.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_environment_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_environment_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_environment_variables.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_environment_variables.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_locked_definition_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_locked_definition_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_meltano_file.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_meltano_file.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_meltano_invoker.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_meltano_invoker.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_migration_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_migration_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_plugin_install_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_plugin_install_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_plugin_invoker.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_plugin_invoker.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_plugin_lock_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_plugin_lock_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_plugin_remove_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_plugin_remove_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_plugin_test_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_plugin_test_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_project.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_project.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_project_add_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_project_add_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_project_dirs_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_project_dirs_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_project_files.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_project_files.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_project_init_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_project_init_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_project_plugins_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_project_plugins_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_project_settings_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_project_settings_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_schedule_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_schedule_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_select_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_select_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_settings_store.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_settings_store.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_setting_definition.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_setting_definition.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_sqlalchemy.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_sqlalchemy.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_state_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_state_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_state_strategy.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_state_strategy.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_task_sets.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_task_sets.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_task_sets_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_task_sets_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_user_config.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_user_config.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_utils.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_utils.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_validation_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_validation_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_venv_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_venv_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_version_check.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_version_check.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_yaml.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_yaml.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\test_yaml_with_user_config.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\test_yaml_with_user_config.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\behavior\\test_addon.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\behavior\\test_addon.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\behavior\\test_canonical.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\behavior\\test_canonical.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\behavior\\test_hookable.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\behavior\\test_hookable.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\block\\test_extract_load.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\block\\test_extract_load.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\block\\test_parser.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\block\\test_parser.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\block\\test_plugin_command.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\block\\test_plugin_command.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\block\\test_singer.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\block\\test_singer.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\container\\test_container_spec.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\container\\test_container_spec.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\hub\\test_meltano_hub_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\hub\\test_meltano_hub_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\job\\test_finder.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\job\\test_finder.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\job\\test_job.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\job\\test_job.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\job\\test_stale_job_failer.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\job\\test_stale_job_failer.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\logging\\test_formatters.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\logging\\test_formatters.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\logging\\test_logging_utils.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\logging\\test_logging_utils.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\logging\\test_log_parsing_integration.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\logging\\test_log_parsing_integration.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\logging\\test_output_logger.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\logging\\test_output_logger.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\logging\\test_parsers.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\logging\\test_parsers.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\logging\\test_renderers.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\logging\\test_renderers.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\test_airflow.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\test_airflow.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\test_command.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\test_command.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\test_log_parser.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\test_log_parser.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\test_plugin.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\test_plugin.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\test_plugin_compatibility.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\test_plugin_compatibility.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\test_plugin_config_service.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\test_plugin_config_service.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\test_plugin_settings.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\test_plugin_settings.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\test_superset.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\test_superset.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\protocols\\test_el_context.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\protocols\\test_el_context.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\runner\\test_runner.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\runner\\test_runner.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\state_store\\test_db.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\state_store\\test_db.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\state_store\\test_filesystem.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\state_store\\test_filesystem.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\state_store\\test_state_store.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\state_store\\test_state_store.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\tracking\\test_environment_context.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\tracking\\test_environment_context.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\tracking\\test_exception.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\tracking\\test_exception.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\tracking\\test_plugins.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\tracking\\test_plugins.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\tracking\\test_project_context.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\tracking\\test_project_context.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\tracking\\test_schemas.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\tracking\\test_schemas.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\tracking\\test_tracker.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\tracking\\test_tracker.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\utils\\test_python_compatibility.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\utils\\test_python_compatibility.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_catalog.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_catalog.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_mapper.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_mapper.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_tap.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_tap.py",
-        "type": "python"
-      }
-    },
-    {
-      "id": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_target.py",
-      "attrs": {
-        "file": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_target.py",
-        "type": "python"
-      }
-    }
+    [
+      "lineage:tap-gitlab",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-jsonl",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-state-s3\\meltano.yml",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:example",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-env-precedence\\meltano.yml",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-github",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-smoke-test",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-expand-envvars-in-array\\meltano.yml",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-csv",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-expand-envvars-in-array\\meltano.yml",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-cloudwatch",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-meltanohub",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-spreadsheets-anywhere",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-slack",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-slack-public",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-google-analytics",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-github-meltano",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-github-search",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-snowflake",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-snowflake-metrics",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-snowflake-audit",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-snowflake-singer-activity",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-yaml",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-yaml-metrics",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-yaml-audit",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-snowflake",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-apprise",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano-map-transformer",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "mapper"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:airflow",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:dbt-snowflake",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:sqlfluff",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:awscli",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:superset",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:great_expectations",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:permifrost",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:kms",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-sqlite",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-migrations\\meltano.yml",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-postgres",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-run\\meltano.yml",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:dbt-postgres",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-run\\ending-meltano.yml",
+          "type": "utilitie"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-with-state",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-run-merge-states\\meltano.yml",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-with-large-config",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\large_config_project\\meltano.yml",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-with-large-config",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\large_config_project\\schedule.yml",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-meltano-yml",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\multifile_project\\meltano.yml",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:map-meltano-yml",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\multifile_project\\meltano.yml",
+          "type": "mapper"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-meltano-yml",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\multifile_project\\meltano.yml",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-subconfig-2-yml",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\multifile_project\\subconfig_2.yml",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-subconfig-2-yml",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\multifile_project\\subconfig_2.yml",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-subconfig-1-yml",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\multifile_project\\subfolder\\subconfig_1.yml",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:target-subconfig-1-yml",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\multifile_project\\subfolder\\subconfig_1.yml",
+          "type": "loader"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:tap-snowflake-metrics-legacy",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\meltano-manifest\\expected-manifests\\meltano-manifest.userdev.json",
+          "type": "extractor"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\noxfile.py",
+      {
+        "attrs": {
+          "file": "meltano\\noxfile.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\scripts\\alembic_freeze.py",
+      {
+        "attrs": {
+          "file": "meltano\\scripts\\alembic_freeze.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:DataFrame",
+      {
+        "attrs": {},
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:DataFrame:join",
+      {
+        "attrs": {},
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\scripts\\generate_docker_tags.py",
+      {
+        "attrs": {
+          "file": "meltano\\scripts\\generate_docker_tags.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\asserts.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\asserts.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\conftest.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\conftest.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\test_meta.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\test_meta.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\integration\\example-library\\meltano-run-merge-states\\tap.py",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-run-merge-states\\tap.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\integration\\example-library\\meltano-env-precedence\\env-var-in-pip-url-example-124\\example.py",
+      {
+        "attrs": {
+          "file": "meltano\\integration\\example-library\\meltano-env-precedence\\env-var-in-pip-url-example-124\\example.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\add.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\add.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\cli.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\cli.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\compile.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\compile.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\config.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\config.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\docs.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\docs.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\dragon.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\dragon.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\elt.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\elt.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\environment.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\environment.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\hub.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\hub.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\initialize.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\initialize.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\install.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\install.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\invoke.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\invoke.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\job.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\job.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\lock.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\lock.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\logs.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\logs.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\params.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\params.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\remove.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\remove.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\run.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\run.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\schedule.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\schedule.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\schema.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\schema.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\select_entities.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\select_entities.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\state.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\state.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\upgrade.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\upgrade.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\utils.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\utils.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\validate.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\validate.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\_didyoumean.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\_didyoumean.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\__main__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\__main__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\cli_messages.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\cli_messages.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\config_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\config_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\constants.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\constants.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\db.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\db.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:SQLAlchemy:execute",
+      {
+        "attrs": {},
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\elt_context.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\elt_context.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\environment.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\environment.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\environment_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\environment_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\error.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\error.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\job_state.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\job_state.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\locked_definition_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\locked_definition_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\meltano_file.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\meltano_file.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\meltano_invoker.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\meltano_invoker.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\migration_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\migration_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\models.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\models.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin_install_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin_install_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin_invoker.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin_invoker.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin_location_remove.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin_location_remove.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin_lock_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin_lock_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin_remove_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin_remove_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin_repository.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin_repository.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin_test_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin_test_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\project.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\project.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\project_add_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\project_add_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\project_dirs_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\project_dirs_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\project_files.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\project_files.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\project_init_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\project_init_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\project_plugins_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\project_plugins_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\project_settings_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\project_settings_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\schedule.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\schedule.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\schedule_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\schedule_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\select_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\select_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\setting.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\setting.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\settings_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\settings_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:DataFrame:merge",
+      {
+        "attrs": {},
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\settings_store.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\settings_store.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\setting_definition.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\setting_definition.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\sqlalchemy.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\sqlalchemy.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\task_sets.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\task_sets.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\task_sets_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\task_sets_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\transform_add_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\transform_add_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\upgrade_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\upgrade_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\user_config.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\user_config.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\validation_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\validation_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\venv_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\venv_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\version_check.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\version_check.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\yaml.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\yaml.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\_compat.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\_compat.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\_packaging.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\_packaging.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\_state.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\_state.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\_types.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\_types.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\env.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\env.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\schemas\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\schemas\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\interactive\\config.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\interactive\\config.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\interactive\\utils.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\interactive\\utils.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\cli\\interactive\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\cli\\interactive\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\behavior\\addon.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\behavior\\addon.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\behavior\\canonical.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\behavior\\canonical.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\behavior\\hookable.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\behavior\\hookable.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\behavior\\name_eq.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\behavior\\name_eq.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\behavior\\visitor.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\behavior\\visitor.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\behavior\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\behavior\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\block\\blockset.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\block\\blockset.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\block\\block_parser.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\block\\block_parser.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\block\\extract_load.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\block\\extract_load.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\block\\future_utils.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\block\\future_utils.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\block\\ioblock.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\block\\ioblock.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\block\\plugin_command.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\block\\plugin_command.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\block\\singer.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\block\\singer.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\block\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\block\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\bundle\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\bundle\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\container\\container_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\container\\container_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\container\\container_spec.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\container\\container_spec.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\container\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\container\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\hub\\client.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\hub\\client.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\hub\\schema.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\hub\\schema.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\hub\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\hub\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\job\\finder.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\job\\finder.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\job\\job.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\job\\job.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\job\\stale_job_failer.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\job\\stale_job_failer.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\job\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\job\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\logging\\formatters.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\logging\\formatters.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\logging\\job_logging_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\logging\\job_logging_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\logging\\models.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\logging\\models.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\logging\\output_logger.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\logging\\output_logger.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\logging\\parsers.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\logging\\parsers.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\logging\\renderers.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\logging\\renderers.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\logging\\utils.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\logging\\utils.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\logging\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\logging\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\manifest\\cache.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\manifest\\cache.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\manifest\\contexts.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\manifest\\contexts.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\manifest\\jsonschema.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\manifest\\jsonschema.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\manifest\\manifest.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\manifest\\manifest.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\manifest\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\manifest\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\airflow.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\airflow.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\base.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\base.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\command.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\command.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\config_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\config_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\error.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\error.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\factory.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\factory.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\file.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\file.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\meltano_file.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\meltano_file.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\project_plugin.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\project_plugin.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\requirements.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\requirements.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\settings_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\settings_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\superset.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\superset.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\utility.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\utility.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\runner\\dbt.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\runner\\dbt.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\runner\\singer.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\runner\\singer.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\runner\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\runner\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\base.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\base.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\db.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\db.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\filesystem.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\filesystem.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\schemas.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\schemas.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\tracker.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\tracker.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\utils\\pidfile.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\utils\\pidfile.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\utils\\python_compatibility.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\utils\\python_compatibility.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\utils\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\utils\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\_protocols\\el_context.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\_protocols\\el_context.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\_protocols\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\_protocols\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\dbt\\base.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\dbt\\base.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\dbt\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\dbt\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\singer\\base.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\singer\\base.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\singer\\mapper.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\singer\\mapper.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\singer\\tap.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\singer\\tap.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\singer\\target.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\singer\\target.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\singer\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\plugin\\singer\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\azure\\backend.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\azure\\backend.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\azure\\settings.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\azure\\settings.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\azure\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\azure\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\google\\backend.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\google\\backend.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\google\\settings.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\google\\settings.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\google\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\google\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\s3\\backend.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\s3\\backend.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\s3\\settings.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\s3\\settings.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\s3\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\state_store\\s3\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\contexts\\base.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\base.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\contexts\\cli.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\cli.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\contexts\\environment.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\environment.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\contexts\\exception.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\exception.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\contexts\\plugins.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\plugins.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\contexts\\project.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\project.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\tracking\\contexts\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\core\\tracking\\contexts\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\utils\\dialect_typing.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\utils\\dialect_typing.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\utils\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\utils\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\23ea52e6d784_add_resource_type_to_embed_token.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\23ea52e6d784_add_resource_type_to_embed_token.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\367228df6a43_add_trigger_to_job.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\367228df6a43_add_trigger_to_job.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\53e97221d99f_add_run_id_to_job.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\53e97221d99f_add_run_id_to_job.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\5b43800443d1_rename_job_to_job_run_and_job_id_to_job_.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\5b43800443d1_rename_job_to_job_run_and_job_id_to_job_.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\6828cc5b1a4f_create_dedicated_state_table.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\6828cc5b1a4f_create_dedicated_state_table.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\6ef30ab7b8e5_.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\6ef30ab7b8e5_.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\87d9638f6ac6_add_subscription.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\87d9638f6ac6_add_subscription.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\990c0665f3ce_ensure_user_login_count_default_value.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\990c0665f3ce_ensure_user_login_count_default_value.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\a3e2b0a4937d_add_login_audit_columns.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\a3e2b0a4937d_add_login_audit_columns.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\b4c05e463b53_.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\b4c05e463b53_.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\c0efb3c314eb_drop_ui_api_tables.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\c0efb3c314eb_drop_ui_api_tables.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\ceb00d7ff3bd_create_the_embedtoken_table.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\ceb00d7ff3bd_create_the_embedtoken_table.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\d135f52a6f49_add_last_heartbeat_at_column_to_job.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\d135f52a6f49_add_last_heartbeat_at_column_to_job.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\e4fbabc3fed6_add_last_activity_at_column.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\e4fbabc3fed6_add_last_activity_at_column.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\f4c225a9492f_create_dedicated_job_state_table.py",
+      {
+        "attrs": {
+          "file": "meltano\\src\\meltano\\migrations\\versions\\f4c225a9492f_create_dedicated_job_state_table.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\benchmarks\\test_state_backend_benchmarks.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\benchmarks\\test_state_backend_benchmarks.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\benchmarks\\test_tap_benchmarks.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\benchmarks\\test_tap_benchmarks.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\cli.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\cli.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\core.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\core.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\custom_addon.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\custom_addon.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\fs.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\fs.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\state_backends.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\state_backends.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\utils.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\utils.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\db\\mssql.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\db\\mssql.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\db\\postgresql.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\db\\postgresql.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\db\\postgresql_psycopg2.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\db\\postgresql_psycopg2.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\db\\sqlite.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\db\\sqlite.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\db\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\db\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\docker\\snowplow.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\docker\\snowplow.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\docker\\__init__.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\fixtures\\docker\\__init__.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_add.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_add.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_cli.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_cli.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_compile.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_compile.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_config.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_config.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_didyoumean.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_didyoumean.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_elt.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_elt.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_environment.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_environment.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_hub.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_hub.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_initialize.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_initialize.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_install.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_install.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_invoke.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_invoke.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_job_cmd.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_job_cmd.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_lock.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_lock.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_logs.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_logs.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_remove.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_remove.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_run.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_run.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_schedule.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_schedule.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_select.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_select.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_state.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_state.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\cli\\test_upgrade.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\cli\\test_upgrade.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_db_compat.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_db_compat.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_db_connection.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_db_connection.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_elt_context.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_elt_context.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_environment_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_environment_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_environment_variables.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_environment_variables.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_locked_definition_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_locked_definition_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_meltano_file.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_meltano_file.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_meltano_invoker.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_meltano_invoker.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_migration_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_migration_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_plugin_install_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_plugin_install_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_plugin_invoker.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_plugin_invoker.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_plugin_lock_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_plugin_lock_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_plugin_remove_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_plugin_remove_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_plugin_test_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_plugin_test_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_project.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_project.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_project_add_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_project_add_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_project_dirs_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_project_dirs_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_project_files.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_project_files.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_project_init_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_project_init_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_project_plugins_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_project_plugins_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_project_settings_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_project_settings_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_schedule_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_schedule_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_select_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_select_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_settings_store.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_settings_store.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_setting_definition.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_setting_definition.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_sqlalchemy.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_sqlalchemy.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_state_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_state_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_state_strategy.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_state_strategy.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_task_sets.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_task_sets.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_task_sets_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_task_sets_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_user_config.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_user_config.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_utils.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_utils.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_validation_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_validation_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_venv_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_venv_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_version_check.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_version_check.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_yaml.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_yaml.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_yaml_with_user_config.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\test_yaml_with_user_config.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\behavior\\test_addon.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\behavior\\test_addon.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\behavior\\test_canonical.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\behavior\\test_canonical.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\behavior\\test_hookable.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\behavior\\test_hookable.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\block\\test_extract_load.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\block\\test_extract_load.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\block\\test_parser.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\block\\test_parser.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\block\\test_plugin_command.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\block\\test_plugin_command.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\block\\test_singer.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\block\\test_singer.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\container\\test_container_spec.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\container\\test_container_spec.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\hub\\test_meltano_hub_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\hub\\test_meltano_hub_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\job\\test_finder.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\job\\test_finder.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\job\\test_job.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\job\\test_job.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\job\\test_stale_job_failer.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\job\\test_stale_job_failer.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\logging\\test_formatters.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\logging\\test_formatters.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\logging\\test_logging_utils.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\logging\\test_logging_utils.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\logging\\test_log_parsing_integration.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\logging\\test_log_parsing_integration.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\logging\\test_output_logger.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\logging\\test_output_logger.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\logging\\test_parsers.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\logging\\test_parsers.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\logging\\test_renderers.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\logging\\test_renderers.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\test_airflow.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\test_airflow.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\test_command.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\test_command.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\test_log_parser.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\test_log_parser.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\test_plugin.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\test_plugin.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\test_plugin_compatibility.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\test_plugin_compatibility.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\test_plugin_config_service.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\test_plugin_config_service.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\test_plugin_settings.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\test_plugin_settings.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\test_superset.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\test_superset.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\protocols\\test_el_context.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\protocols\\test_el_context.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\runner\\test_runner.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\runner\\test_runner.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\state_store\\test_db.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\state_store\\test_db.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\state_store\\test_filesystem.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\state_store\\test_filesystem.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\state_store\\test_state_store.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\state_store\\test_state_store.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\tracking\\test_environment_context.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\tracking\\test_environment_context.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\tracking\\test_exception.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\tracking\\test_exception.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\tracking\\test_plugins.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\tracking\\test_plugins.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\tracking\\test_project_context.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\tracking\\test_project_context.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\tracking\\test_schemas.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\tracking\\test_schemas.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\tracking\\test_tracker.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\tracking\\test_tracker.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\utils\\test_python_compatibility.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\utils\\test_python_compatibility.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\singer\\test_catalog.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_catalog.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\singer\\test_mapper.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_mapper.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\singer\\test_tap.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_tap.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\plugin\\singer\\test_target.py",
+      {
+        "attrs": {
+          "file": "meltano\\tests\\meltano\\core\\plugin\\singer\\test_target.py",
+          "type": "python"
+        },
+        "namespace": "lineage"
+      }
+    ]
   ],
   "edges": [
-    {
-      "source": "DataFrame",
-      "target": "DataFrame:join",
-      "type": "dataflow",
-      "attrs": {
-        "function": "join",
-        "lineno": 416
+    [
+      "lineage:DataFrame",
+      "lineage:DataFrame:join",
+      {
+        "type": "dataflow",
+        "attrs": {
+          "function": "join",
+          "lineno": 416,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "DataFrame",
-      "target": "DataFrame:merge",
-      "type": "dataflow",
-      "attrs": {
-        "function": "merge",
-        "lineno": 1039
+    ],
+    [
+      "lineage:DataFrame",
+      "lineage:DataFrame:merge",
+      {
+        "type": "dataflow",
+        "attrs": {
+          "function": "merge",
+          "lineno": 1039,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\src\\meltano\\core\\db.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 216
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\db.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 216,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\src\\meltano\\core\\block\\extract_load.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 543
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\block\\extract_load.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 543,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\src\\meltano\\core\\state_store\\db.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 124
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\state_store\\db.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 124,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 478
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\core\\plugin\\singer\\catalog.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 478,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 59
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\13e8639c6d2b_add_state_edit_to_job_state_enum.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 59,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\src\\meltano\\migrations\\versions\\23ea52e6d784_add_resource_type_to_embed_token.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 40
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\23ea52e6d784_add_resource_type_to_embed_token.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 40,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\src\\meltano\\migrations\\versions\\6828cc5b1a4f_create_dedicated_state_table.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 363
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\6828cc5b1a4f_create_dedicated_state_table.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 363,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\src\\meltano\\migrations\\versions\\990c0665f3ce_ensure_user_login_count_default_value.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 27
+    ],
+    [
+      "lineage:meltano\\src\\meltano\\migrations\\versions\\990c0665f3ce_ensure_user_login_count_default_value.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 27,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\tests\\fixtures\\db\\mssql.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 31
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\db\\mssql.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 31,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\tests\\fixtures\\db\\postgresql.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 19
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\db\\postgresql.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 19,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\tests\\fixtures\\db\\postgresql_psycopg2.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 19
+    ],
+    [
+      "lineage:meltano\\tests\\fixtures\\db\\postgresql_psycopg2.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 19,
+          "namespace": "lineage"
+        }
       }
-    },
-    {
-      "source": "meltano\\tests\\meltano\\core\\test_sqlalchemy.py",
-      "target": "SQLAlchemy:execute",
-      "type": "sql",
-      "attrs": {
-        "function": "execute",
-        "lineno": 62
+    ],
+    [
+      "lineage:meltano\\tests\\meltano\\core\\test_sqlalchemy.py",
+      "lineage:SQLAlchemy:execute",
+      {
+        "type": "sql",
+        "attrs": {
+          "function": "execute",
+          "lineno": 62,
+          "namespace": "lineage"
+        }
       }
-    }
+    ]
   ],
-  "pagerank": {},
-  "velocity": {},
   "sources": [
     "tap-gitlab",
     "target-jsonl",
@@ -3447,6 +4588,5 @@
     "target-yaml-audit": 0,
     "target-snowflake": 0,
     "target-apprise": 0
-  },
-  "cycles": []
+  }
 }
