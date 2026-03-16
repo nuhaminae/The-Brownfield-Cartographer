@@ -25,7 +25,25 @@ class SQLLineageAnalyser:
             parsed = sqlglot.parse(sql_text)
             for stmt in parsed:
                 for src, tgt in sqlglot.lineage(stmt):
-                    edges.append({"source": src, "target": tgt, "type": "table"})
+                    edges.append(
+                        {
+                            "source": src,
+                            "target": tgt,
+                            "type": "table",
+                            "attrs": {
+                                "file": str(self.sql_file),
+                                "query_type": (
+                                    stmt.key.upper()
+                                    if hasattr(stmt, "key")
+                                    else "UNKNOWN"
+                                ),
+                                "columns": [
+                                    c.sql() for c in getattr(stmt, "expressions", [])
+                                ],
+                            },
+                        }
+                    )
+
         except Exception as e:
             logging.error(f"[SQLLineageAnalyser] Failed to parse {self.sql_file}: {e}")
         return edges
