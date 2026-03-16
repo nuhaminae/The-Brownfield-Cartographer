@@ -1,7 +1,7 @@
 # src/agents/semanticist.py
 # The Brownfield Cartographer
 
-import json
+
 import logging
 from pathlib import Path
 from typing import Any, Dict
@@ -13,7 +13,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 from src.models.models import ModuleNode
 
 logging.basicConfig(level=logging.INFO)
-# ollama run glm-5:cloud
 
 
 class ContextWindowBudget:
@@ -54,32 +53,37 @@ class Semanticist:
         return "gemma:2b" if heavy else "Qwen2.5:3B"
 
     def _run_model(self, model: str, prompt: str, max_tokens: int = 300) -> str:
+        """
+        Run the LLM with improved sanitisation and logging.
+        Ensures valid answers are not stripped and provides transparency.
+        """
 
-        def _sanitize_output(text: str) -> str:
+        def _sanitise_output(text: str) -> str:
             if not text:
                 return ""
 
-            # Common preambles we want to drop
+            # Only strip preambles if they are at the start
             preambles = [
                 "Sure, here is a concise purpose statement for this module:",
-                "Sure, here's a concise purpose statement for the code: ",
+                "Sure, here's a concise purpose statement for the code:",
                 "Sure, here is a concise purpose statement for the module:",
-                "Sure, here is the concise purpose statement for the module: ",
+                "Sure, here is the concise purpose statement for the module:",
                 "Sure, here's the purpose statement:",
-                "Sure, here's a concise purpose statement for the module: ",
-                "Sure, here's the concise purpose statement: ",
+                "Sure, here's a concise purpose statement for the module:",
+                "Sure, here's the concise purpose statement:",
                 "Here is a concise purpose statement:",
-                "Sure, here is the concise purpose statement for the module: ",
+                "Sure, here is the concise purpose statement for the module:",
             ]
 
             for p in preambles:
-                text = text.replace(p, "")
+                if text.startswith(p):
+                    text = text[len(p) :].lstrip()
 
-            # Strip markdown artifacts
+            # Strip markdown artifacts but preserve line breaks
             text = text.replace("**", "").replace("```", "")
 
-            # Clean up whitespace
-            return " ".join(text.split()).strip()
+            # Do NOT collapse whitespace — just trim leading/trailing spaces
+            return text.strip()
 
         try:
             response = ollama.chat(
@@ -90,14 +94,13 @@ class Semanticist:
             raw = response["message"]["content"].strip()
 
             # Debug logging
-            print("\n[DEBUG] Raw LLM output:\n", raw if raw else "(Empty)")
-            sanitized = _sanitize_output(raw)
-            print(
-                "\n[DEBUG] Sanitized output:\n",
-                sanitized if sanitized else "(Empty after sanitization)",
+            logging.info(f"[LLM Raw Output]: {raw if raw else '(Empty)'}")
+            sanitised = _sanitise_output(raw)
+            logging.info(
+                f"[LLM Sanitised Output]: {sanitised if sanitised else '(Empty after sanitisation)'}"
             )
-
-            return sanitized
+            return sanitised
+            # return raw
         except Exception as e:
             logging.error(f"Ollama call failed for model {model}: {e}")
             return ""
@@ -116,6 +119,11 @@ class Semanticist:
             return 0.0
 
     def generate_purpose_statement(self, module_node: ModuleNode) -> str:
+        """
+        Generate a concise purpose statement for a module.
+        Uses lightweight model for small modules, escalates to heavy model for complex ones.
+        Also detects semantic drift against docstrings.
+        """
         code = (module_node.attrs.get("code") or "").strip()
         docstring = (module_node.attrs.get("docstring") or "").strip()
         extra_docstrings = module_node.attrs.get("function_docstrings") or {}
@@ -123,6 +131,11 @@ class Semanticist:
         if not self.context_budget.reserve(code):
             logging.warning(f"Skipping {module_node.path} due to budget.")
             return ""
+
+        # Decide model based on complexity
+        code_length = len(code.split())
+        heavy_needed = code_length > 500 or len(docstring.split()) > 100
+        model_choice = "Qwen2.5:3B" if heavy_needed else self._select_model(False)
 
         # Generate from code
         prompt = (
@@ -132,13 +145,10 @@ class Semanticist:
             "Limit to 2-3 sentences.\n\n"
             f"Code:\n{code[:1500]}"
         )
-        statement = self._run_model(self._select_model(False), prompt, 400)
+        statement = self._run_model(model_choice, prompt, 400)
 
-        # Normalize path
-        def normalise_key(path: str) -> str:
-            return path.replace("\\", "/").strip().lower()
-
-        norm_path = normalise_key(module_node.path)
+        # Normalise path
+        norm_path = self._normalise_path(module_node.path)
         statement = (statement or "").strip()
         self.purpose_statements[norm_path] = statement
         module_node.purpose_statement = statement
@@ -152,30 +162,53 @@ class Semanticist:
                 drift_flag = True
         self.doc_drift_flags[norm_path] = drift_flag
 
+        # Debug transparency
+        logging.info(
+            f"[Purpose] Generated for {norm_path} using {'heavy' if heavy_needed else 'light'} model."
+        )
+        logging.info(f"[Purpose] Drift flag: {drift_flag}")
+
         return statement
 
     def cluster_into_domains(self):
+        """
+        Cluster modules into business domains using embeddings + KMeans.
+        Logs when fallback vectors are used to highlight degraded cluster quality.
+        Uses heavy reasoning model for labeling clusters.
+        """
         texts = list(self.purpose_statements.values())
         if not texts:
+            logging.warning("[Cluster] No purpose statements available to cluster.")
             return
 
-        # Use embedding
         embeddings = []
+        fallback_count = 0
         for text in texts:
             try:
                 emb = ollama.embeddings(model="glm-5:cloud", prompt=text)["embedding"]
                 embeddings.append(emb)
             except Exception as e:
-                logging.error(f"Embedding failed: {e}")
+                logging.error(
+                    f"[Cluster] Embedding failed for text: {text[:50]}... Error: {e}"
+                )
                 embeddings.append([0] * 768)  # fallback vector
+                fallback_count += 1
 
-        k = min(8, max(5, len(texts)))  # enforce k=5–8
+        if fallback_count > 0:
+            logging.warning(
+                f"[Cluster] {fallback_count} modules used fallback vectors. Cluster quality may be degraded."
+            )
+
+        # Enforce k between 5 and 8
+        k = min(8, max(5, len(texts)))
         km = KMeans(n_clusters=k, random_state=42)
         km.fit(embeddings)
 
+        # Assign provisional domain labels
         for i, module in enumerate(self.purpose_statements.keys()):
             self.domain_clusters[module] = f"Domain-{km.labels_[i]}"
 
+        # Label clusters with LLM
         for cluster_id in set(km.labels_):
             cluster_texts = [
                 text for i, text in enumerate(texts) if km.labels_[i] == cluster_id
@@ -186,10 +219,56 @@ class Semanticist:
                 "Examples: 'Data Ingestion', 'Reporting', 'Configuration'.\n\n"
                 f"Module summaries:\n{cluster_texts}"
             )
-            label = self._run_model(self._select_model(False), prompt, 50).strip()
+            label = self._run_model("Qwen2.5:3B", prompt, 50).strip()
+            if not label:
+                label = f"Domain-{cluster_id} (Unlabeled)"
+                logging.warning(
+                    f"[Cluster] LLM failed to label cluster {cluster_id}, using fallback label."
+                )
             for i, module in enumerate(self.purpose_statements.keys()):
                 if km.labels_[i] == cluster_id:
                     self.domain_clusters[module] = label
+
+        logging.info(f"[Cluster] Completed clustering into {k} domains.")
+
+    def _normalise_path(self, path: str) -> str:
+        """
+        Ensure consistent path formatting across Windows/Linux and lowercase.
+        """
+        return path.replace("\\", "/").strip().lower()
+
+    def _build_day_one_prompt(self, evidence: Dict[str, Any]) -> str:
+        """
+        Build a directive prompt for Day-One Questions.
+        Explicitly instructs the LLM to interpret evidence into business insights.
+        Formats outputs clearly with degrees and pagerank variance.
+        """
+        # Format critical outputs with degree counts
+        critical_outputs_fmt = [
+            f"{s} (degree {d})" for s, d in evidence["critical_outputs"]
+        ]
+        # Format pagerank with values
+        pagerank_fmt = [f"{m} (score {v:.6f})" for m, v in evidence["top_pagerank"]]
+        # Compute pagerank variance
+        pagerank_values = [v for _, v in evidence["top_pagerank"]]
+        variance = max(pagerank_values, default=0) - min(pagerank_values, default=0)
+
+        return f"""
+        You are an expert software cartographer. Use the following preprocessed evidence to answer the Five FDE Day-One Questions.
+
+        Evidence Summary:
+        - Ingestion Nodes (Singer taps feeding downstream): {evidence['ingestion_nodes']}
+        - Critical Outputs (Singer targets ranked by degree): {critical_outputs_fmt}
+        - Top Business Logic Modules (Python in src/meltano/core, ranked by pagerank): {pagerank_fmt}
+        (Pagerank variance: {variance:.6f})
+        - Velocity Hotspots (recently changed production .py files): {evidence['hotspots']}
+        - Dead Code Summary: {evidence['dead_code_summary']}
+        - Blast Radius (structural impact from module graph): {evidence['blast_radius']['structural']}
+        - Blast Radius (dataflow impact from lineage graph): {evidence['blast_radius']['dataflow']}
+
+        Answer concisely and directly. Do not just list evidence; interpret it into business insights.
+        Provide short, clear analysis for each question, highlighting risks, dependencies, and areas of concentration.
+        """
 
     def answer_day_one_questions(
         self, surveyor_output: Dict[str, Any], hydrologist_output: Dict[str, Any]
@@ -197,52 +276,40 @@ class Semanticist:
         """
         Synthesise answers to the Five Day-One Questions using Surveyor + Hydrologist outputs.
         Preprocesses evidence to filter noise and highlight the most relevant signals.
+        Always uses the heavy reasoning model (Qwen2.5:3B) for synthesis.
         Includes debug prints for transparency.
+        Returns day_one_answers as a list of sections for readability.
         """
-
-        # --- Debug raw inputs ---
-        print("\n=== Surveyor Output ===")
-        print("Sources:", surveyor_output.get("sources", []))
-        print("Sinks:", surveyor_output.get("sinks", []))
-        print(
-            "Pagerank (top 10):",
-            sorted(
-                surveyor_output.get("pagerank", {}).items(),
-                key=lambda x: x[1],
-                reverse=True,
-            )[:10],
-        )
-        print(
-            "Velocity Hotspots:",
-            surveyor_output.get("velocity", {}).get("hotspots", []),
-        )
-        print(
-            "Dead Code Summary:",
-            surveyor_output.get("velocity", {}).get("dead_code_summary", {}),
-        )
-
-        print("\n=== Hydrologist Output ===")
-        print("Sources:", hydrologist_output.get("sources", []))
-        print("Sinks:", hydrologist_output.get("sinks", []))
-        print("Edges:", hydrologist_output.get("edges", []))
-        print("Blast Radius:", hydrologist_output.get("blast_radius", {}))
-
-        # --- Preprocess evidence ---
-        # Ingestion nodes: prefer Surveyor, fallback to Hydrologist, filter to tap-* extractors
-        ingestion_nodes = surveyor_output.get("sources", [])
+        # --- Ingestion nodes ---
+        edges = hydrologist_output.get("edges", [])
+        sources = hydrologist_output.get("sources", [])
+        active_taps = {e["source"] for e in edges if e["source"].startswith("tap-")}
+        ingestion_nodes = [
+            s for s in sources if s.startswith("tap-") and s in active_taps
+        ]
         if not ingestion_nodes:
-            ingestion_nodes = hydrologist_output.get("sources", [])
-        ingestion_nodes = [n for n in ingestion_nodes if n.startswith("tap-")]
+            ingestion_nodes = [s for s in sources if s.startswith("tap-")]
+        ingestion_nodes = [
+            n for n in ingestion_nodes if "test" not in n and "yml" not in n
+        ]
 
-        # Critical outputs: use Hydrologist sinks, filter to target-* loaders
-        critical_targets = [
-            s for s in hydrologist_output.get("sinks", []) if s.startswith("target-")
-        ][:5]
+        # --- Critical outputs ---
+        sinks = hydrologist_output.get("sinks", [])
+        sink_counts = {}
+        for e in edges:
+            tgt = e["target"]
+            if tgt.startswith("target-"):
+                sink_counts[tgt] = sink_counts.get(tgt, 0) + 1
+        critical_targets = sorted(
+            sink_counts.items(), key=lambda x: x[1], reverse=True
+        )[:5]
+        if not critical_targets and sinks:
+            critical_targets = [(s, 0) for s in sinks if s.startswith("target-")][:5]
 
-        # Pagerank: filter to Python modules in src/meltano/core
+        # --- Pagerank ---
         pagerank = surveyor_output.get("pagerank", {})
         code_modules = {
-            k: v
+            self._normalise_path(k): v
             for k, v in pagerank.items()
             if k.endswith(".py") and "src/meltano/core" in k
         }
@@ -250,14 +317,35 @@ class Semanticist:
             :5
         ]
 
-        # Velocity: highlight hotspots limited to .py files
+        # --- Velocity ---
         velocity = surveyor_output.get("velocity", {})
-        hotspots = [h for h in velocity.get("hotspots", []) if h.endswith(".py")][:5]
+        hotspots = [
+            self._normalise_path(h)
+            for h in velocity.get("hotspots", [])
+            if h.endswith(".py") and "src/meltano/" in h
+        ][:5]
         dead_code_summary = velocity.get("dead_code_summary", {})
 
-        # Blast radius: expand to top 3 nodes
-        blast_radius = hydrologist_output.get("blast_radius", {})
-        top_blast = sorted(blast_radius.items(), key=lambda x: x[1], reverse=True)[:3]
+        # --- Blast radius ---
+        module_blast = surveyor_output.get("blast_radius", {})
+        lineage_blast = hydrologist_output.get("blast_radius", {})
+        module_blast = {self._normalise_path(k): v for k, v in module_blast.items()}
+        lineage_blast = {self._normalise_path(k): v for k, v in lineage_blast.items()}
+        top_module_blast = [
+            (k, v)
+            for k, v in sorted(module_blast.items(), key=lambda x: x[1], reverse=True)
+            if "src/meltano/core" in k
+            and not k.endswith(".yml")
+            and "tests/" not in k
+            and ".github/" not in k
+        ][:5]
+        top_lineage_blast = sorted(
+            lineage_blast.items(), key=lambda x: x[1], reverse=True
+        )[:5]
+        blast_radius = {
+            "structural": top_module_blast,
+            "dataflow": top_lineage_blast,
+        }
 
         evidence = {
             "ingestion_nodes": ingestion_nodes,
@@ -265,41 +353,45 @@ class Semanticist:
             "top_pagerank": top_pagerank,
             "hotspots": hotspots,
             "dead_code_summary": dead_code_summary,
-            "blast_radius": top_blast,
+            "blast_radius": blast_radius,
         }
 
-        # --- Build prompt with explicit mapping ---
-        prompt = f"""
-        You are an expert software cartographer. Use the following preprocessed evidence to answer the Five FDE Day-One Questions.
+        # Debug transparency
+        logging.info(f"[Evidence] Ingestion taps: {len(ingestion_nodes)}")
+        logging.info(f"[Evidence] Critical outputs: {critical_targets}")
+        logging.info(
+            f"[Evidence] Pagerank variance: {max(code_modules.values(), default=0) - min(code_modules.values(), default=0)}"
+        )
+        logging.info(f"[Evidence] Hotspots: {hotspots}")
+        logging.info(f"[Evidence] Blast radius structural top: {top_module_blast}")
+        logging.info(f"[Evidence] Blast radius dataflow top: {top_lineage_blast}")
 
-        Evidence Summary:
-        - Ingestion Nodes (Singer taps): {ingestion_nodes}
-        - Critical Outputs (Singer targets): {critical_targets}
-        - Top Business Logic Modules (Python in src/meltano/core): {top_pagerank}
-        - Velocity Hotspots (recently changed .py files): {hotspots}
-        - Dead Code Summary: {dead_code_summary}
-        - Blast Radius (modules with downstream impact): {top_blast}
+        # --- Build prompt ---
+        prompt = self._build_day_one_prompt(evidence)
 
-        Answer concisely and directly:
+        # --- Run model with heavy reasoning model forced ---
+        answers = self._run_model("Qwen2.5:3B", prompt, 600)
 
-        1. What is the primary data ingestion path? (use ingestion_nodes)
-        2. What are the 3-5 most critical output datasets/endpoints? (use critical_outputs)
-        3. What is the blast radius if the most critical module fails? (use blast_radius)
-        4. Where is the business logic concentrated vs. distributed? (use top_pagerank)
-        5. What has changed most frequently in the last 90 days? (use velocity hotspots and dead_code_summary)
-        """
-
-        # --- Run model ---
-        answers = self._run_model(self._select_model(True), prompt, 600)
-
-        # --- Fallback if model refuses ---
+        # --- Fallback ---
         if "cannot answer" in answers.lower() or not answers.strip():
             answers = f"""
             1. Primary ingestion: {ingestion_nodes or "No ingestion nodes detected"}
             2. Critical outputs: {critical_targets or "No critical outputs detected"}
-            3. Blast radius: {top_blast or "No blast radius data"}
+            3. Blast radius (structural): {blast_radius['structural'] or "No structural blast radius data"}
+            Blast radius (dataflow): {blast_radius['dataflow'] or "No dataflow blast radius data"}
             4. Business logic concentration: {top_pagerank or "No pagerank data"}
             5. Frequent changes: {hotspots or "No hotspots"}; Dead code: {dead_code_summary}
             """
 
-        return {"day_one_answers": answers.strip(), "evidence": evidence}
+        # --- Split answers into sections for readability ---
+        answers_sections = [
+            section.strip()
+            for section in answers.strip().split("\n###")
+            if section.strip()
+        ]
+        # Prepend "###" back to each section except the first if needed
+        answers_sections = [
+            s if s.startswith("###") else "### " + s for s in answers_sections
+        ]
+
+        return {"day_one_answers": answers_sections, "evidence": evidence}
