@@ -1,3 +1,7 @@
+# src/analysers/python_dataflow_analyser.py
+# The Brownfield Cartographer Python Dataflow Analyser
+
+
 import ast
 import logging
 from pathlib import Path
@@ -46,6 +50,10 @@ class PythonDataFlowAnalyser:
                                 "source": "DataFrame",
                                 "target": f"DataFrame:{func_name}",
                                 "type": "transform",
+                                "attrs": {
+                                    "function": func_name,
+                                    "lineno": getattr(node, "lineno", None),
+                                },
                             }
                         )
                     if node.func.attr == "execute":
@@ -54,6 +62,10 @@ class PythonDataFlowAnalyser:
                                 "source": str(self.file_path),
                                 "target": "SQLAlchemy:execute",
                                 "type": "sql",
+                                "attrs": {
+                                    "function": node.func.attr,
+                                    "lineno": getattr(node, "lineno", None),
+                                },
                             }
                         )
         except Exception as e:
